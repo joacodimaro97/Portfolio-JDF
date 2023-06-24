@@ -20,7 +20,7 @@ export default function Index(){
   return (
     <>
     <div className='w-full h-[200vh] flex'>
-    <div className=' bg-[url(./public/bgindex.png)] pt-20 bg-cover bg-fixed w-full h-[100vh] flex flex-col justify-end items-center'>
+    <div className=' bg-[url("https://i.postimg.cc/XJhd5314/pexels-daniel-putzer-633409.png")] pt-20 bg-cover bg-fixed w-full h-[100vh] flex flex-col justify-end items-center'>
         
         <div className=' border-l-8 border-[#fff]  pl-6 w-[90vw]  h-[40vh] mb-80 lg:mb-80 flex flex-col justify-evenly'>
         <p className='text-[3rem]  md:text-[5rem] text-white font-montserrat tracking-wider font-black'>Joaquin Dimaro</p>
