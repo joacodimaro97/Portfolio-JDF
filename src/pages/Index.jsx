@@ -19,11 +19,12 @@ export default function Index(){
 
   return (
     <>
-    <div className='w-full h-[200vh] flex'>
-    <div className=' bg-[url(./public/bgindex.png)] pt-20 bg-cover bg-fixed w-full h-[100vh] flex flex-col justify-end items-center'>
+
+    <div className='w-full min-h-[200vh] flex flex-col'>
+    <div className=' bg-[url("https://i.postimg.cc/kMH7GJDM/gabriel-heinzer-EUzk9-BIEq6-M-unsplash.jpg")] pt-20 bg-cover bg-center bg-no-repeat bg-black  bg-fixed w-full h-[100vh] flex flex-col justify-end items-center'>
         
         <div className=' border-l-8 border-[#fff]  pl-6 w-[90vw]  h-[40vh] mb-80 lg:mb-80 flex flex-col justify-evenly'>
-        <p className='text-[3rem]  md:text-[5rem] text-white font-montserrat tracking-wider font-black'>Joaquin Dimaro</p>
+        <p className='text-[3rem]  md:text-[4.8rem] text-white font-montserrat tracking-wider font-black '>Joaquin Dimaro</p>
         <p className='text-[1.5rem] text-[#ffe83c]'>Full Stack Developer</p>
         <div className='flex items-center justify-between w-[12vw]'>
               <Link to={"https://www.instagram.com/joaquindimaro/"} target="_blank" className='hover:scale-[1.3] transition-all duration-600'>
@@ -41,7 +42,6 @@ export default function Index(){
 
         </div>
         </div>
-        <button onClick={handleSeeMore} className='w-[30vw] sm:w-[15vw] md:w-[10vw] h-[6vh] shadow-[#000] shadow-lg bg-white font-montserrat text-bold rounded-[15px] mb-8 '><p className='font-montserrat font-black text-[1rem]'>START</p></button>
         <div className=' absolute   md:w-[10vw] h-[60vh] md:right-0 md:top-40'> 
         <div className='flex  md:flex-col h-full justify-between items-center'>
         <svg  fill="#ffffff" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="c133de6af664cd4f011a55de6b000d0b"> <path display="inline" d="M108.669,0.501h23.032v22.756h21.069V0.501h23.034V69.41h-23.032V46.334h-21.069V69.41h-23.032V0.501 H108.669z M206.091,23.353h-20.275V0.501h63.594v22.852h-20.285V69.41h-23.032V23.353H206.091z M259.502,0.501h24.02l14.771,24.213 l14.759-24.213h24.023V69.41h-22.938V35.256l-15.845,24.5h-0.395l-15.856-24.5V69.41h-22.539V0.501z M348.54,0.501h23.038v46.133 h32.391V69.41H348.54V0.501z M74.987,100.926l32.946,369.533l147.844,41.04L404.031,470.4l32.981-369.475H74.987z M368.289,188.62 l-2.063,22.977l-0.906,10.188h-0.149H256h-0.158h-63.956l4.142,46.407h59.814H256h92.98h12.214l-1.106,12.172l-10.65,119.32 l-0.682,7.652L256,433.045v0.008l-0.208,0.059l-92.839-25.774l-6.351-71.161h20.97h24.527l3.227,36.146l50.474,13.632l0.042-0.013 v-0.004l50.551-13.64l5.257-58.781H256h-0.158H154.578L143.439,188.62l-1.085-12.157h113.488H256h113.374L368.289,188.62z"> </path> </g> </g></svg>  
@@ -53,7 +53,57 @@ export default function Index(){
         </div>
     </div>
 
+    <div className='w-full min-h-[80vh] bg-[#fff] flex flex-col items-center md:flex-row'>
+    <div className='  m-4 md:m-0  md:w-[50%] flex items-center justify-center h-full '>
+    
+     <img src="https://i.postimg.cc/W3yXGkc4/image2.png" className=' w-[80%] h-[68%]' alt="" />
+     
     </div>
+     <div className='w-[90%] md:w-[50%] h-full  items-center justify-evenly flex flex-col '>
+        <h1 className='font-montserrat text-[30px] font-bold tracking-[10px]'>About me</h1>
+            <p className='font-montserrat text-center p-2 md:p-10 text-[17px] tracking-[1px]'>Hi! I'm Joaco, Full Stack Developer.
+              I have a creative mindset, good skills and experience in technologies such as HTML5, CSS, React, React Native, MongoDB, Express and Node.js.
+              I have skills to work in a team using the AGILE methodology and collaboratively on Github, building projects from scratch, demonstrating initiative and ability to acquire knowledge in a self-taught way.
+              The use of Javascript libraries, allow me to design and develop attractive and functional interfaces that delight users.
+              I am looking for continuous professional growth, I am goal oriented and I am used to working under tight deadlines.
+              I enjoy change, intellectual challenges and learning new technologies, I can also establish good interpersonal relationships and I have the ability to work in high performance teams in a collaborative way.
+              If you want to know more about me, feel free to contact me.
+            </p>
+     </div>
+    </div>
+    <div className='w-full min-h-[100vh] bg-[url("https://i.postimg.cc/0Qvk0cDt/pankaj-patel-y-EAOf-WSdzg-M-unsplash.jpg")] bg-cover bg-fixed flex flex-col justify-evenly items-center'>
+    <h1 className='text-white font-montserrat font-black tracking-[25px] text-[45px]'>SKILLS</h1>
+    <div className='w-full min-h-[80vh] text-white font-montserrat flex-col flex items-center justify-around lg:flex-row '>
+      <div className='lg:w-[18%] bg-[#0000008a] shadow-md shadow-[#ffffff1a] flex flex-col justify-start items-center font-black tracking-[1px] p-5 text-center text-[25px] h-[80vh] ' >
+        <h2 className='mb-20'>HTML5 / CSS3</h2>
+        <p className='text-[16px]  font-light'>HTML5 is the markup language used to structure and present content on the web, CSS is the styling language that defines the look and feel of a web page. HTML5 is responsible for organizing and tagging elements such as text, images and forms, CSS is used to control layout, colors, fonts and other visual aspects. Both work together to create attractive and functional web pages.</p>
+      </div>
+      <div className='lg:w-[18%] bg-[#0000008a] shadow-md shadow-[#ffffff1a] flex flex-col items-center justify-start font-black tracking-[1px] p-5 text-center text-[25px] h-[80vh]' >
+        <h2 className='mb-20'>Javascript</h2>
+        <p className='text-[16px]  font-light'>Incorporating JavaScript into a web application provides interactivity, real-time manipulation, form validation and efficient communication with the server. These combined benefits improve the user experience and overall application efficiency.</p>
+      </div>
+      <div className='lg:w-[18%] bg-[#0000008a] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] h-[80vh]' >
+        <h2 className='mb-10'>React / React Native</h2>
+        <p className='text-[15px]  font-light'>React and React Native are technologies that enable the development of interactive and efficient user interfaces for web and mobile applications respectively. With React, you can create scalable and reusable interfaces in web applications, while React Native allows you to develop native mobile apps for iOS and Android with a single code base. Both technologies deliver a high-quality user experience and reduce development time and costs.</p>
+      </div>
+      <div className='lg:w-[18%] bg-[#0000008a] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] h-[80vh]' >
+        <h2 className='mb-10'>Node.js / Express / Mongo DB</h2>
+        <p className='text-[16px]  font-light'>By incorporating Node.js, MongoDB and Express into the backend of your application, you get a powerful combination. Node.js allows you to build fast and scalable web applications, MongoDB offers a flexible and easy-to-use database, and Express simplifies API and web application development. Together, they bring efficiency, scalability and productivity to backend development.</p>
+      </div>
+      <div className='lg:w-[18%] bg-[#0000008a] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] h-[80vh]' >
+        <h2 className='mb-10'>Complementary Technologies</h2>
+        <p className='text-[16px]  font-light'>JavaScript libraries provide predefined functionalities that save time and offer advanced features to enhance the development of a project. <br /> <br />
+        Figma allows me to design user interfaces in an efficient and collaborative way, streamlining the design process. <br /><br />
+        And that's not all, I continue to study and learn new languages and technologies to expand my skills.</p>
+      </div>
+    </div>
+    </div>
+    <div className='w-full h-[80vh] bg-white flex'>
+
+    </div>
+    </div>
+
+
    
     </>
   )
