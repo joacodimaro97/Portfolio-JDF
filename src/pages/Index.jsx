@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
-
+import Card from '../components/Card';
 
 export default function Index(){
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -55,7 +55,7 @@ export default function Index(){
     <div className='w-full min-h-[80vh] bg-[#fff] flex flex-col items-center md:flex-row'>
     <div className='  m-4 md:m-0  md:w-[50%] flex items-center justify-center h-full '>
     
-     <img src="https://i.postimg.cc/W3yXGkc4/image2.png" className=' w-[80%] h-[68%]' alt="" />
+     <img src="https://i.postimg.cc/W3yXGkc4/image2.png" className='shadow-md shadow-black w-[80%] h-[68%]' alt="" />
      
     </div>
      <div className='w-[90%] md:w-[50%] h-full  items-center justify-evenly flex flex-col '>
@@ -97,7 +97,11 @@ export default function Index(){
       </div>
     </div>
     </div>
-    <div className='w-full h-[80vh] bg-white flex'>
+    <div className='w-full min-h-[80vh] bg-white flex flex-col'>
+      <h1 className='font-montserrat text-[45px] font-black tracking-[10px] border-l-[8px] border-[#ffe83c] w-[35vh] h-[20vh] ml-2 mt-2 pl-4 ' >My projects</h1>
+       <div className='w-full min-h-[90vh]  flex items-center justify-center '>
+            <Card/>
+       </div>
 
     </div>
     </div>
