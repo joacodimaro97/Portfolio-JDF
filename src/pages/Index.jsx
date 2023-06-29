@@ -20,7 +20,7 @@ export default function Index(){
   return (
     <>
     <div className='w-full min-h-[200vh] flex flex-col'>
-    <div className=' bg-[url("https://i.postimg.cc/kMH7GJDM/gabriel-heinzer-EUzk9-BIEq6-M-unsplash.jpg")] pt-20 bg-cover bg-center bg-no-repeat bg-black  bg-fixed w-full h-[100vh] flex flex-col justify-end items-center'>
+    <div className='animate__animated animate__fadeIn bg-[url("https://i.postimg.cc/kMH7GJDM/gabriel-heinzer-EUzk9-BIEq6-M-unsplash.jpg")] pt-20 bg-cover bg-center bg-no-repeat bg-black  bg-fixed w-full h-[100vh] flex flex-col justify-end items-center'>
         
         <div className=' border-l-8 border-[#fff]  pl-6 w-[90vw]  h-[40vh] mb-80 lg:mb-80 flex flex-col justify-evenly'>
         <p className='text-[3rem]  md:text-[4.8rem] text-white font-montserrat tracking-wider font-black '>Joaquin Dimaro</p>
@@ -38,10 +38,9 @@ export default function Index(){
               <Link to={"https://walink.co/518242"} target="_blank" className='hover:scale-[1.3] transition-all duration-600' >
                 <svg width="29px" className='border-[3.5px] rounded-[7px]' fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></g></svg>
               </Link>
-
         </div>
         </div>
-    
+        <svg className='mb-4' width="64px" height="64px" viewBox="0 -4.5 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>arrow_down [#ffffff]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-220.000000, -6684.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M164.292308,6524.36583 L164.292308,6524.36583 C163.902564,6524.77071 163.902564,6525.42619 164.292308,6525.83004 L172.555873,6534.39267 C173.33636,6535.20244 174.602528,6535.20244 175.383014,6534.39267 L183.70754,6525.76791 C184.093286,6525.36716 184.098283,6524.71997 183.717533,6524.31405 C183.328789,6523.89985 182.68821,6523.89467 182.29347,6524.30266 L174.676479,6532.19636 C174.285736,6532.60124 173.653152,6532.60124 173.262409,6532.19636 L165.705379,6524.36583 C165.315635,6523.96094 164.683051,6523.96094 164.292308,6524.36583" id="arrow_down-[#ffffff]"> </path> </g> </g> </g> </g></svg>
         <div className=' absolute   md:w-[10vw] h-[60vh] md:right-0 md:top-40'> 
         <div className='flex  md:flex-col h-full justify-between items-center'>
         <svg  fill="#ffffff" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="c133de6af664cd4f011a55de6b000d0b"> <path display="inline" d="M108.669,0.501h23.032v22.756h21.069V0.501h23.034V69.41h-23.032V46.334h-21.069V69.41h-23.032V0.501 H108.669z M206.091,23.353h-20.275V0.501h63.594v22.852h-20.285V69.41h-23.032V23.353H206.091z M259.502,0.501h24.02l14.771,24.213 l14.759-24.213h24.023V69.41h-22.938V35.256l-15.845,24.5h-0.395l-15.856-24.5V69.41h-22.539V0.501z M348.54,0.501h23.038v46.133 h32.391V69.41H348.54V0.501z M74.987,100.926l32.946,369.533l147.844,41.04L404.031,470.4l32.981-369.475H74.987z M368.289,188.62 l-2.063,22.977l-0.906,10.188h-0.149H256h-0.158h-63.956l4.142,46.407h59.814H256h92.98h12.214l-1.106,12.172l-10.65,119.32 l-0.682,7.652L256,433.045v0.008l-0.208,0.059l-92.839-25.774l-6.351-71.161h20.97h24.527l3.227,36.146l50.474,13.632l0.042-0.013 v-0.004l50.551-13.64l5.257-58.781H256h-0.158H154.578L143.439,188.62l-1.085-12.157h113.488H256h113.374L368.289,188.62z"> </path> </g> </g></svg>  
@@ -72,24 +71,24 @@ export default function Index(){
     </div>
     <div className='w-full min-h-[100vh] bg-[url("https://i.postimg.cc/0Qvk0cDt/pankaj-patel-y-EAOf-WSdzg-M-unsplash.jpg")] bg-cover bg-fixed flex flex-col justify-evenly items-center'>
     <h1 className='text-white font-montserrat font-black tracking-[25px] text-[45px]'>SKILLS</h1>
-    <div className='w-full min-h-[80vh] text-white font-montserrat flex-col flex items-center justify-around lg:flex-row '>
-      <div className='lg:w-[18%] bg-[#0000008a] shadow-md shadow-[#ffffff1a] flex flex-col justify-start items-center font-black tracking-[1px] p-5 text-center text-[25px] h-[80vh] ' >
+    <div className='w-full min-h-[80vh] text-white font-montserrat flex-col flex items-start justify-around lg:flex-row '>
+      <div className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col justify-start items-center font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh] ' >
         <h2 className='mb-20'>HTML5 / CSS3</h2>
         <p className='text-[16px]  font-light'>HTML5 is the markup language used to structure and present content on the web, CSS is the styling language that defines the look and feel of a web page. HTML5 is responsible for organizing and tagging elements such as text, images and forms, CSS is used to control layout, colors, fonts and other visual aspects. Both work together to create attractive and functional web pages.</p>
       </div>
-      <div className='lg:w-[18%] bg-[#0000008a] shadow-md shadow-[#ffffff1a] flex flex-col items-center justify-start font-black tracking-[1px] p-5 text-center text-[25px] h-[80vh]' >
+      <div className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col items-center justify-start font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh]' >
         <h2 className='mb-20'>Javascript</h2>
         <p className='text-[16px]  font-light'>Incorporating JavaScript into a web application provides interactivity, real-time manipulation, form validation and efficient communication with the server. These combined benefits improve the user experience and overall application efficiency.</p>
       </div>
-      <div className='lg:w-[18%] bg-[#0000008a] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] h-[80vh]' >
+      <div className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh]' >
         <h2 className='mb-10'>React / React Native</h2>
         <p className='text-[15px]  font-light'>React and React Native are technologies that enable the development of interactive and efficient user interfaces for web and mobile applications respectively. With React, you can create scalable and reusable interfaces in web applications, while React Native allows you to develop native mobile apps for iOS and Android with a single code base. Both technologies deliver a high-quality user experience and reduce development time and costs.</p>
       </div>
-      <div className='lg:w-[18%] bg-[#0000008a] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] h-[80vh]' >
+      <div className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh]' >
         <h2 className='mb-10'>Node.js / Express / Mongo DB</h2>
         <p className='text-[16px]  font-light'>By incorporating Node.js, MongoDB and Express into the backend of your application, you get a powerful combination. Node.js allows you to build fast and scalable web applications, MongoDB offers a flexible and easy-to-use database, and Express simplifies API and web application development. Together, they bring efficiency, scalability and productivity to backend development.</p>
       </div>
-      <div className='lg:w-[18%] bg-[#0000008a] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] h-[80vh]' >
+      <div className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh]' >
         <h2 className='mb-10'>Complementary Technologies</h2>
         <p className='text-[16px]  font-light'>JavaScript libraries provide predefined functionalities that save time and offer advanced features to enhance the development of a project. <br /> <br />
         Figma allows me to design user interfaces in an efficient and collaborative way, streamlining the design process. <br /><br />
