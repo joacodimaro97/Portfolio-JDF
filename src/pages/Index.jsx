@@ -1,15 +1,16 @@
-import React,{useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Card from '../components/Card';
 import Footer from '../components/Footer'
+import { useSpring, animated } from '@react-spring/web';
 
 
 
 
-
-export default function Index(){
+export default function Index() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [menu, setMenu] = useState(false);
+  const [checked, setChecked] = useState(true);
 
   const handleSeeMore = () => {
     const newScrollPosition = window.innerHeight;
@@ -20,28 +21,81 @@ export default function Index(){
     setScrollPosition(newScrollPosition);
   };
 
-  function handleMenu(){
+  function handleMenu() {
     setMenu(true);
 
   }
-  console.log(menu)
+  function closeMenu() {
+    setMenu(false);
+  }
+
+  const menuAnimation = useSpring({
+
+    transform: menu ? 'translateY(0)' : 'translateY(-100%)',
+    config: {
+      duration: 800,
+    },
+  });
+
+
+
+  const handleClick = () => {
+    setChecked(!checked);
+  };
+
+
 
 
   return (
     <>
-    <div className='absolute z-10  w-[60px] h-[60px] rounded-bl-[100%] bg-[#ffe83c]  top-0 right-0 '>
-    <div onClick={handleMenu} className='w-full h-full flex  justify-center'>
-    <svg  className='mr-0 cursor-pointer' fill="#000000" width="44px" height="44px" viewBox="-5.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>menu</title> <path d="M1.375 9.156h18.063c0.781 0 1.375-0.594 1.375-1.375 0-0.75-0.594-1.344-1.375-1.344h-18.063c-0.781 0-1.375 0.594-1.375 1.344 0 0.781 0.594 1.375 1.375 1.375zM1.375 14.625h18.063c0.781 0 1.375-0.594 1.375-1.375 0-0.75-0.594-1.344-1.375-1.344h-18.063c-0.781 0-1.375 0.594-1.375 1.344 0 0.781 0.594 1.375 1.375 1.375zM1.375 20.094h18.063c0.781 0 1.375-0.594 1.375-1.344 0-0.781-0.594-1.375-1.375-1.375h-18.063c-0.781 0-1.375 0.594-1.375 1.375 0 0.75 0.594 1.344 1.375 1.344zM1.375 25.563h18.063c0.781 0 1.375-0.594 1.375-1.344 0-0.781-0.594-1.375-1.375-1.375h-18.063c-0.781 0-1.375 0.594-1.375 1.375 0 0.75 0.594 1.344 1.375 1.344z"></path> </g></svg>
-    </div>
-    </div>
-    <div className='w-full min-h-[200vh] z-1 flex flex-col'>
-      
-    <div className='animate__animated animate__fadeIn bg-[url("https://i.postimg.cc/kMH7GJDM/gabriel-heinzer-EUzk9-BIEq6-M-unsplash.jpg")] pt-20 bg-cover bg-center bg-no-repeat bg-black  bg-fixed w-full h-[100vh] flex flex-col justify-end items-center'>
-        
-        <div className=' border-l-8 border-[#fff]  pl-6 w-[90vw]  h-[40vh] mb-80 lg:mb-80 flex flex-col justify-evenly'>
-        <p className='text-[3rem]  md:text-[4.8rem] text-white font-montserrat tracking-wider font-black '>Joaquin Dimaro</p>
-        <p className='text-[1.5rem] text-[#ffe83c]'>Full Stack Developer</p>
-        <div className='flex items-center justify-between w-[12vw]'>
+      <div className='absolute z-10  w-[60px] h-[60px] rounded-bl-[100%] bg-[#ffe83c]  top-0 right-0 '>
+        <div className='w-full h-full flex  justify-center'>
+          <svg onClick={handleMenu} className='mr-0 cursor-pointer' fill="#000000" width="44px" height="44px" viewBox="-5.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>menu</title> <path d="M1.375 9.156h18.063c0.781 0 1.375-0.594 1.375-1.375 0-0.75-0.594-1.344-1.375-1.344h-18.063c-0.781 0-1.375 0.594-1.375 1.344 0 0.781 0.594 1.375 1.375 1.375zM1.375 14.625h18.063c0.781 0 1.375-0.594 1.375-1.375 0-0.75-0.594-1.344-1.375-1.344h-18.063c-0.781 0-1.375 0.594-1.375 1.344 0 0.781 0.594 1.375 1.375 1.375zM1.375 20.094h18.063c0.781 0 1.375-0.594 1.375-1.344 0-0.781-0.594-1.375-1.375-1.375h-18.063c-0.781 0-1.375 0.594-1.375 1.375 0 0.75 0.594 1.344 1.375 1.344zM1.375 25.563h18.063c0.781 0 1.375-0.594 1.375-1.344 0-0.781-0.594-1.375-1.375-1.375h-18.063c-0.781 0-1.375 0.594-1.375 1.375 0 0.75 0.594 1.344 1.375 1.344z"></path> </g></svg>
+
+          {menu && <animated.div id='menuDiv' style={menuAnimation} className='absolute w-[100vw] md:w-[40vw] xl:w-[30vw] 2xl:w-[25vw] h-[100vh] md:h-[90vh] md:rounded-bl-[10px] top-0 right-0 bg-white ' >
+            <div className='flex flex-col items-end'>
+              <svg className='cursor-pointer m-1' onClick={closeMenu} fill="#000000" width="44px" height="44px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM21.657 10.344c-0.39-0.39-1.023-0.39-1.414 0l-4.242 4.242-4.242-4.242c-0.39-0.39-1.024-0.39-1.415 0s-0.39 1.024 0 1.414l4.242 4.242-4.242 4.242c-0.39 0.39-0.39 1.024 0 1.414s1.024 0.39 1.415 0l4.242-4.242 4.242 4.242c0.39 0.39 1.023 0.39 1.414 0s0.39-1.024 0-1.414l-4.242-4.242 4.242-4.242c0.391-0.391 0.391-1.024 0-1.414z"></path> </g></svg>
+              <div className='w-full text-white font-bold tracking-[2px] flex justify-center items-center bg-[#323131db] h-[8vh]'>
+                <h1 >ENG</h1>
+                <input
+                  type='checkbox'
+                  className='toggle bg-[#3d8630] mr-2 ml-2'
+                  checked={checked}
+                  onChange={handleClick}
+                />
+                <h1>ESP</h1>
+              </div>
+              <div className='w-full flex flex-col items-center justify-around bg-[#0c0c0b] h-[30vh] ' >
+                <Link to={"/history"} className='flex items-center '><p className='mr-2 font-bold tracking-[7px] text-white'>My History</p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                </svg>
+                </Link>
+                <Link className='flex items-center '><p className='mr-2 font-bold tracking-[7px] text-white'>Challenge JS</p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                </svg>
+                </Link>
+                <Link className='flex items-center '><p className='mr-2 font-bold tracking-[7px] text-white'>Contact</p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+                </svg>
+
+                </Link>
+                <Link></Link>
+              </div>
+            </div>
+
+
+
+          </animated.div>}
+        </div>
+      </div>
+      <div className='w-full min-h-[200vh] z-1 flex flex-col'>
+
+        <div className='animate__animated animate__fadeIn bg-[url("https://i.postimg.cc/kMH7GJDM/gabriel-heinzer-EUzk9-BIEq6-M-unsplash.jpg")] pt-20 bg-cover bg-center bg-no-repeat bg-black  bg-fixed w-full h-[100vh] flex flex-col justify-end items-center'>
+
+          <div className=' border-l-8 border-[#fff]  pl-6 w-[90vw]  h-[40vh] mb-80 lg:mb-80 flex flex-col justify-evenly'>
+            <p className='text-[3rem]  md:text-[4.8rem] text-white font-montserrat tracking-wider font-black '>Joaquin Dimaro</p>
+            <p className='text-[1.5rem] text-[#ffe83c]'>Full Stack Developer</p>
+            <div className='flex items-center justify-between w-[12vw]'>
               <Link to={"https://www.instagram.com/joaquindimaro/"} target="_blank" className='hover:scale-[1.3] transition-all duration-600'>
                 <svg width="34px" height="34px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M2 6C2 3.79086 3.79086 2 6 2H18C20.2091 2 22 3.79086 22 6V18C22 20.2091 20.2091 22 18 22H6C3.79086 22 2 20.2091 2 18V6ZM6 4C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4H6ZM12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9ZM7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12ZM17.5 8C18.3284 8 19 7.32843 19 6.5C19 5.67157 18.3284 5 17.5 5C16.6716 5 16 5.67157 16 6.5C16 7.32843 16.6716 8 17.5 8Z" fill="#ffffff"></path> </g></svg>
               </Link>
@@ -54,27 +108,27 @@ export default function Index(){
               <Link to={"https://walink.co/518242"} target="_blank" className='hover:scale-[1.3] transition-all duration-600' >
                 <svg width="29px" className='border-[3.5px] rounded-[7px]' fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></g></svg>
               </Link>
+            </div>
+          </div>
+          <svg className='mb-4' width="64px" height="64px" viewBox="0 -4.5 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>arrow_down [#ffffff]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-220.000000, -6684.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M164.292308,6524.36583 L164.292308,6524.36583 C163.902564,6524.77071 163.902564,6525.42619 164.292308,6525.83004 L172.555873,6534.39267 C173.33636,6535.20244 174.602528,6535.20244 175.383014,6534.39267 L183.70754,6525.76791 C184.093286,6525.36716 184.098283,6524.71997 183.717533,6524.31405 C183.328789,6523.89985 182.68821,6523.89467 182.29347,6524.30266 L174.676479,6532.19636 C174.285736,6532.60124 173.653152,6532.60124 173.262409,6532.19636 L165.705379,6524.36583 C165.315635,6523.96094 164.683051,6523.96094 164.292308,6524.36583" id="arrow_down-[#ffffff]"> </path> </g> </g> </g> </g></svg>
+          <div className=' absolute   md:w-[10vw] h-[60vh] md:right-0 md:top-40'>
+            <div className='flex  md:flex-col h-full justify-between items-center'>
+              <svg fill="#ffffff" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="c133de6af664cd4f011a55de6b000d0b"> <path display="inline" d="M108.669,0.501h23.032v22.756h21.069V0.501h23.034V69.41h-23.032V46.334h-21.069V69.41h-23.032V0.501 H108.669z M206.091,23.353h-20.275V0.501h63.594v22.852h-20.285V69.41h-23.032V23.353H206.091z M259.502,0.501h24.02l14.771,24.213 l14.759-24.213h24.023V69.41h-22.938V35.256l-15.845,24.5h-0.395l-15.856-24.5V69.41h-22.539V0.501z M348.54,0.501h23.038v46.133 h32.391V69.41H348.54V0.501z M74.987,100.926l32.946,369.533l147.844,41.04L404.031,470.4l32.981-369.475H74.987z M368.289,188.62 l-2.063,22.977l-0.906,10.188h-0.149H256h-0.158h-63.956l4.142,46.407h59.814H256h92.98h12.214l-1.106,12.172l-10.65,119.32 l-0.682,7.652L256,433.045v0.008l-0.208,0.059l-92.839-25.774l-6.351-71.161h20.97h24.527l3.227,36.146l50.474,13.632l0.042-0.013 v-0.004l50.551-13.64l5.257-58.781H256h-0.158H154.578L143.439,188.62l-1.085-12.157h113.488H256h113.374L368.289,188.62z"> </path> </g> </g></svg>
+              <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7.50159 0H10.0797V1.07812H8.57971V2.15625H10.0797V3.23438H7.50159V0Z" fill="#ffffff"></path> <path d="M10.5953 0H13.1735V0.9375H11.6735V1.125H13.1735V3.28125H10.5953V2.29688H12.0953V2.10938H10.5953V0Z" fill="#ffffff"></path> <path d="M13.6891 0H16.2672V0.9375H14.7672V1.125H16.2672V3.28125H13.6891V2.29688H15.1891V2.10938H13.6891V0Z" fill="#ffffff"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9912 24L5.04739 22.0723L3 4.71655H21L18.9541 22.0696L11.9912 24ZM7.04736 12.5727L7.23814 14.7013L14.6153 14.7013L14.3682 17.4619L11.9941 18.1027L11.992 18.1034L9.62135 17.4633L9.4698 15.7656H7.33301L7.63123 19.1079L11.9915 20.3183L16.3579 19.1078L16.8901 13.1443L16.9421 12.5727L17.3264 8.26428H6.66406L6.85756 10.3929H14.9936L14.7999 12.5727L7.04736 12.5727Z" fill="#ffffff"></path> </g></svg>
+              <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M9.29289 1.29289C9.48043 1.10536 9.73478 1 10 1H18C19.6569 1 21 2.34315 21 4V9C21 9.55228 20.5523 10 20 10C19.4477 10 19 9.55228 19 9V4C19 3.44772 18.5523 3 18 3H11V8C11 8.55228 10.5523 9 10 9H5V20C5 20.5523 5.44772 21 6 21H7C7.55228 21 8 21.4477 8 22C8 22.5523 7.55228 23 7 23H6C4.34315 23 3 21.6569 3 20V8C3 7.73478 3.10536 7.48043 3.29289 7.29289L9.29289 1.29289ZM6.41421 7H9V4.41421L6.41421 7ZM16 14.75C16 13.2312 17.2312 12 18.75 12H21C21.5523 12 22 12.4477 22 13C22 13.5523 21.5523 14 21 14H18.75C18.3358 14 18 14.3358 18 14.75C18 15.1642 18.3358 15.5 18.75 15.5H19.25C20.7688 15.5 22 16.7312 22 18.25C22 19.7688 20.7688 21 19.25 21H17C16.4477 21 16 20.5523 16 20C16 19.4477 16.4477 19 17 19H19.25C19.6642 19 20 18.6642 20 18.25C20 17.8358 19.6642 17.5 19.25 17.5H18.75C17.2312 17.5 16 16.2688 16 14.75ZM15 13C15 12.4477 14.5523 12 14 12C13.4477 12 13 12.4477 13 13V18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18V17.6667C11 17.1144 10.5523 16.6667 10 16.6667C9.44772 16.6667 9 17.1144 9 17.6667V18C9 19.6569 10.3431 21 12 21C13.6569 21 15 19.6569 15 18V13Z" fill="#ffffff"></path> </g></svg>
+              <svg width="64px" height="64px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>react</title> <rect width="24" height="24" fill="none"></rect> <path d="M12,10.11A1.87,1.87,0,1,1,10.13,12,1.88,1.88,0,0,1,12,10.11M7.37,20c.63.38,2-.2,3.6-1.7a24.22,24.22,0,0,1-1.51-1.9A22.7,22.7,0,0,1,7.06,16c-.51,2.14-.32,3.61.31,4m.71-5.74-.29-.51a7.91,7.91,0,0,0-.29.86c.27.06.57.11.88.16l-.3-.51m6.54-.76.81-1.5-.81-1.5c-.3-.53-.62-1-.91-1.47C13.17,9,12.6,9,12,9s-1.17,0-1.71,0c-.29.47-.61.94-.91,1.47L8.57,12l.81,1.5c.3.53.62,1,.91,1.47.54,0,1.11,0,1.71,0s1.17,0,1.71,0c.29-.47.61-.94.91-1.47M12,6.78c-.19.22-.39.45-.59.72h1.18c-.2-.27-.4-.5-.59-.72m0,10.44c.19-.22.39-.45.59-.72H11.41c.2.27.4.5.59.72M16.62,4c-.62-.38-2,.2-3.59,1.7a24.22,24.22,0,0,1,1.51,1.9,22.7,22.7,0,0,1,2.4.36c.51-2.14.32-3.61-.32-4m-.7,5.74.29.51a7.91,7.91,0,0,0,.29-.86c-.27-.06-.57-.11-.88-.16l.3.51m1.45-7c1.47.84,1.63,3.05,1,5.63,2.54.75,4.37,2,4.37,3.68s-1.83,2.93-4.37,3.68c.62,2.58.46,4.79-1,5.63s-3.45-.12-5.37-1.95c-1.92,1.83-3.91,2.79-5.38,1.95s-1.62-3-1-5.63c-2.54-.75-4.37-2-4.37-3.68S3.08,9.07,5.62,8.32c-.62-2.58-.46-4.79,1-5.63s3.46.12,5.38,1.95c1.92-1.83,3.91-2.79,5.37-1.95M17.08,12A22.51,22.51,0,0,1,18,14.26c2.1-.63,3.28-1.53,3.28-2.26S20.07,10.37,18,9.74A22.51,22.51,0,0,1,17.08,12M6.92,12A22.51,22.51,0,0,1,6,9.74c-2.1.63-3.28,1.53-3.28,2.26S3.93,13.63,6,14.26A22.51,22.51,0,0,1,6.92,12m9,2.26-.3.51c.31,0,.61-.1.88-.16a7.91,7.91,0,0,0-.29-.86l-.29.51M13,18.3c1.59,1.5,3,2.08,3.59,1.7s.83-1.82.32-4a22.7,22.7,0,0,1-2.4.36A24.22,24.22,0,0,1,13,18.3M8.08,9.74l.3-.51c-.31,0-.61.1-.88.16a7.91,7.91,0,0,0,.29.86l.29-.51M11,5.7C9.38,4.2,8,3.62,7.37,4s-.82,1.82-.31,4a22.7,22.7,0,0,1,2.4-.36A24.22,24.22,0,0,1,11,5.7Z"></path> </g></svg>
+              <svg fill="#ffffff" width="64px" height="64px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>mongodb</title> <path d="M15.821 23.185s0-10.361 0.344-10.36c0.266 0 0.612 13.365 0.612 13.365-0.476-0.056-0.956-2.199-0.956-3.005zM22.489 12.945c-0.919-4.016-2.932-7.469-5.708-10.134l-0.007-0.006c-0.338-0.516-0.647-1.108-0.895-1.732l-0.024-0.068c0.001 0.020 0.001 0.044 0.001 0.068 0 0.565-0.253 1.070-0.652 1.409l-0.003 0.002c-3.574 3.034-5.848 7.505-5.923 12.508l-0 0.013c-0.001 0.062-0.001 0.135-0.001 0.208 0 4.957 2.385 9.357 6.070 12.115l0.039 0.028 0.087 0.063q0.241 1.784 0.412 3.576h0.601c0.166-1.491 0.39-2.796 0.683-4.076l-0.046 0.239c0.396-0.275 0.742-0.56 1.065-0.869l-0.003 0.003c2.801-2.597 4.549-6.297 4.549-10.404 0-0.061-0-0.121-0.001-0.182l0 0.009c-0.003-0.981-0.092-1.94-0.261-2.871l0.015 0.099z"></path> </g></svg>
+            </div>
+          </div>
         </div>
-        </div>
-        <svg className='mb-4' width="64px" height="64px" viewBox="0 -4.5 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>arrow_down [#ffffff]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-220.000000, -6684.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M164.292308,6524.36583 L164.292308,6524.36583 C163.902564,6524.77071 163.902564,6525.42619 164.292308,6525.83004 L172.555873,6534.39267 C173.33636,6535.20244 174.602528,6535.20244 175.383014,6534.39267 L183.70754,6525.76791 C184.093286,6525.36716 184.098283,6524.71997 183.717533,6524.31405 C183.328789,6523.89985 182.68821,6523.89467 182.29347,6524.30266 L174.676479,6532.19636 C174.285736,6532.60124 173.653152,6532.60124 173.262409,6532.19636 L165.705379,6524.36583 C165.315635,6523.96094 164.683051,6523.96094 164.292308,6524.36583" id="arrow_down-[#ffffff]"> </path> </g> </g> </g> </g></svg>
-        <div className=' absolute   md:w-[10vw] h-[60vh] md:right-0 md:top-40'> 
-        <div className='flex  md:flex-col h-full justify-between items-center'>
-        <svg  fill="#ffffff" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="c133de6af664cd4f011a55de6b000d0b"> <path display="inline" d="M108.669,0.501h23.032v22.756h21.069V0.501h23.034V69.41h-23.032V46.334h-21.069V69.41h-23.032V0.501 H108.669z M206.091,23.353h-20.275V0.501h63.594v22.852h-20.285V69.41h-23.032V23.353H206.091z M259.502,0.501h24.02l14.771,24.213 l14.759-24.213h24.023V69.41h-22.938V35.256l-15.845,24.5h-0.395l-15.856-24.5V69.41h-22.539V0.501z M348.54,0.501h23.038v46.133 h32.391V69.41H348.54V0.501z M74.987,100.926l32.946,369.533l147.844,41.04L404.031,470.4l32.981-369.475H74.987z M368.289,188.62 l-2.063,22.977l-0.906,10.188h-0.149H256h-0.158h-63.956l4.142,46.407h59.814H256h92.98h12.214l-1.106,12.172l-10.65,119.32 l-0.682,7.652L256,433.045v0.008l-0.208,0.059l-92.839-25.774l-6.351-71.161h20.97h24.527l3.227,36.146l50.474,13.632l0.042-0.013 v-0.004l50.551-13.64l5.257-58.781H256h-0.158H154.578L143.439,188.62l-1.085-12.157h113.488H256h113.374L368.289,188.62z"> </path> </g> </g></svg>  
-        <svg  width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7.50159 0H10.0797V1.07812H8.57971V2.15625H10.0797V3.23438H7.50159V0Z" fill="#ffffff"></path> <path d="M10.5953 0H13.1735V0.9375H11.6735V1.125H13.1735V3.28125H10.5953V2.29688H12.0953V2.10938H10.5953V0Z" fill="#ffffff"></path> <path d="M13.6891 0H16.2672V0.9375H14.7672V1.125H16.2672V3.28125H13.6891V2.29688H15.1891V2.10938H13.6891V0Z" fill="#ffffff"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9912 24L5.04739 22.0723L3 4.71655H21L18.9541 22.0696L11.9912 24ZM7.04736 12.5727L7.23814 14.7013L14.6153 14.7013L14.3682 17.4619L11.9941 18.1027L11.992 18.1034L9.62135 17.4633L9.4698 15.7656H7.33301L7.63123 19.1079L11.9915 20.3183L16.3579 19.1078L16.8901 13.1443L16.9421 12.5727L17.3264 8.26428H6.66406L6.85756 10.3929H14.9936L14.7999 12.5727L7.04736 12.5727Z" fill="#ffffff"></path> </g></svg>
-        <svg  width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M9.29289 1.29289C9.48043 1.10536 9.73478 1 10 1H18C19.6569 1 21 2.34315 21 4V9C21 9.55228 20.5523 10 20 10C19.4477 10 19 9.55228 19 9V4C19 3.44772 18.5523 3 18 3H11V8C11 8.55228 10.5523 9 10 9H5V20C5 20.5523 5.44772 21 6 21H7C7.55228 21 8 21.4477 8 22C8 22.5523 7.55228 23 7 23H6C4.34315 23 3 21.6569 3 20V8C3 7.73478 3.10536 7.48043 3.29289 7.29289L9.29289 1.29289ZM6.41421 7H9V4.41421L6.41421 7ZM16 14.75C16 13.2312 17.2312 12 18.75 12H21C21.5523 12 22 12.4477 22 13C22 13.5523 21.5523 14 21 14H18.75C18.3358 14 18 14.3358 18 14.75C18 15.1642 18.3358 15.5 18.75 15.5H19.25C20.7688 15.5 22 16.7312 22 18.25C22 19.7688 20.7688 21 19.25 21H17C16.4477 21 16 20.5523 16 20C16 19.4477 16.4477 19 17 19H19.25C19.6642 19 20 18.6642 20 18.25C20 17.8358 19.6642 17.5 19.25 17.5H18.75C17.2312 17.5 16 16.2688 16 14.75ZM15 13C15 12.4477 14.5523 12 14 12C13.4477 12 13 12.4477 13 13V18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18V17.6667C11 17.1144 10.5523 16.6667 10 16.6667C9.44772 16.6667 9 17.1144 9 17.6667V18C9 19.6569 10.3431 21 12 21C13.6569 21 15 19.6569 15 18V13Z" fill="#ffffff"></path> </g></svg>
-        <svg  width="64px" height="64px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>react</title> <rect width="24" height="24" fill="none"></rect> <path d="M12,10.11A1.87,1.87,0,1,1,10.13,12,1.88,1.88,0,0,1,12,10.11M7.37,20c.63.38,2-.2,3.6-1.7a24.22,24.22,0,0,1-1.51-1.9A22.7,22.7,0,0,1,7.06,16c-.51,2.14-.32,3.61.31,4m.71-5.74-.29-.51a7.91,7.91,0,0,0-.29.86c.27.06.57.11.88.16l-.3-.51m6.54-.76.81-1.5-.81-1.5c-.3-.53-.62-1-.91-1.47C13.17,9,12.6,9,12,9s-1.17,0-1.71,0c-.29.47-.61.94-.91,1.47L8.57,12l.81,1.5c.3.53.62,1,.91,1.47.54,0,1.11,0,1.71,0s1.17,0,1.71,0c.29-.47.61-.94.91-1.47M12,6.78c-.19.22-.39.45-.59.72h1.18c-.2-.27-.4-.5-.59-.72m0,10.44c.19-.22.39-.45.59-.72H11.41c.2.27.4.5.59.72M16.62,4c-.62-.38-2,.2-3.59,1.7a24.22,24.22,0,0,1,1.51,1.9,22.7,22.7,0,0,1,2.4.36c.51-2.14.32-3.61-.32-4m-.7,5.74.29.51a7.91,7.91,0,0,0,.29-.86c-.27-.06-.57-.11-.88-.16l.3.51m1.45-7c1.47.84,1.63,3.05,1,5.63,2.54.75,4.37,2,4.37,3.68s-1.83,2.93-4.37,3.68c.62,2.58.46,4.79-1,5.63s-3.45-.12-5.37-1.95c-1.92,1.83-3.91,2.79-5.38,1.95s-1.62-3-1-5.63c-2.54-.75-4.37-2-4.37-3.68S3.08,9.07,5.62,8.32c-.62-2.58-.46-4.79,1-5.63s3.46.12,5.38,1.95c1.92-1.83,3.91-2.79,5.37-1.95M17.08,12A22.51,22.51,0,0,1,18,14.26c2.1-.63,3.28-1.53,3.28-2.26S20.07,10.37,18,9.74A22.51,22.51,0,0,1,17.08,12M6.92,12A22.51,22.51,0,0,1,6,9.74c-2.1.63-3.28,1.53-3.28,2.26S3.93,13.63,6,14.26A22.51,22.51,0,0,1,6.92,12m9,2.26-.3.51c.31,0,.61-.1.88-.16a7.91,7.91,0,0,0-.29-.86l-.29.51M13,18.3c1.59,1.5,3,2.08,3.59,1.7s.83-1.82.32-4a22.7,22.7,0,0,1-2.4.36A24.22,24.22,0,0,1,13,18.3M8.08,9.74l.3-.51c-.31,0-.61.1-.88.16a7.91,7.91,0,0,0,.29.86l.29-.51M11,5.7C9.38,4.2,8,3.62,7.37,4s-.82,1.82-.31,4a22.7,22.7,0,0,1,2.4-.36A24.22,24.22,0,0,1,11,5.7Z"></path> </g></svg>
-        <svg fill="#ffffff" width="64px" height="64px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>mongodb</title> <path d="M15.821 23.185s0-10.361 0.344-10.36c0.266 0 0.612 13.365 0.612 13.365-0.476-0.056-0.956-2.199-0.956-3.005zM22.489 12.945c-0.919-4.016-2.932-7.469-5.708-10.134l-0.007-0.006c-0.338-0.516-0.647-1.108-0.895-1.732l-0.024-0.068c0.001 0.020 0.001 0.044 0.001 0.068 0 0.565-0.253 1.070-0.652 1.409l-0.003 0.002c-3.574 3.034-5.848 7.505-5.923 12.508l-0 0.013c-0.001 0.062-0.001 0.135-0.001 0.208 0 4.957 2.385 9.357 6.070 12.115l0.039 0.028 0.087 0.063q0.241 1.784 0.412 3.576h0.601c0.166-1.491 0.39-2.796 0.683-4.076l-0.046 0.239c0.396-0.275 0.742-0.56 1.065-0.869l-0.003 0.003c2.801-2.597 4.549-6.297 4.549-10.404 0-0.061-0-0.121-0.001-0.182l0 0.009c-0.003-0.981-0.092-1.94-0.261-2.871l0.015 0.099z"></path> </g></svg>
-        </div>
-        </div>
-    </div>
-    <div className='w-full min-h-[80vh] bg-[#fff] flex flex-col items-center md:flex-row'>
-    <div className='  m-4 md:m-0  md:w-[50%] flex items-center justify-center h-full '>
-    
-     <img src="https://i.postimg.cc/W3yXGkc4/image2.png" className='shadow-md shadow-black w-[80%] h-[68%]' alt="" />
-     
-    </div>
-     <div className='w-[90%] md:w-[50%] h-full  items-center justify-evenly flex flex-col '>
-        <h1 className='font-montserrat text-[#000] text-[30px] font-bold tracking-[10px]'>About me</h1>
+        <div className='w-full min-h-[80vh] bg-[#fff] flex flex-col items-center md:flex-row'>
+          <div className='  m-4 md:m-0  md:w-[50%] flex items-center justify-center h-full '>
+
+            <img src="https://i.postimg.cc/W3yXGkc4/image2.png" className='shadow-md shadow-black w-[80%] h-[68%]' alt="" />
+
+          </div>
+          <div className='w-[90%] md:w-[50%] h-full  items-center justify-evenly flex flex-col '>
+            <h1 className='font-montserrat text-[#000] text-[30px] font-bold tracking-[10px]'>About me</h1>
             <p className='font-montserrat text-center p-2 md:p-10 text-[17px] text-black tracking-[1px]'>Hi! I'm Joaco, Full Stack Developer.
               I have a creative mindset, good skills and experience in technologies such as HTML5, CSS, React, React Native, MongoDB, Express and Node.js.
               I have skills to work in a team using the AGILE methodology and collaboratively on Github, building projects from scratch, demonstrating initiative and ability to acquire knowledge in a self-taught way.
@@ -83,45 +137,45 @@ export default function Index(){
               I enjoy change, intellectual challenges and learning new technologies, I can also establish good interpersonal relationships and I have the ability to work in high performance teams in a collaborative way.
               If you want to know more about me, feel free to contact me.
             </p>
-     </div>
-    </div>
-    <div className='w-full min-h-[100vh] bg-[url("https://i.postimg.cc/0Qvk0cDt/pankaj-patel-y-EAOf-WSdzg-M-unsplash.jpg")] bg-cover bg-fixed flex flex-col justify-evenly items-center'>
-    <h1 className='text-white font-montserrat font-black tracking-[25px] text-[45px]'>SKILLS</h1>
-    <div className='w-full min-h-[80vh] text-white font-montserrat flex-col flex items-start justify-around lg:flex-row '>
-      <div className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col justify-start items-center font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh] ' >
-        <h2 className='mb-20'>HTML5 / CSS3</h2>
-        <p className='text-[16px]  font-light'>HTML5 is the markup language used to structure and present content on the web, CSS is the styling language that defines the look and feel of a web page. HTML5 is responsible for organizing and tagging elements such as text, images and forms, CSS is used to control layout, colors, fonts and other visual aspects. Both work together to create attractive and functional web pages.</p>
-      </div>
-      <div className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col items-center justify-start font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh]' >
-        <h2 className='mb-20'>Javascript</h2>
-        <p className='text-[16px]  font-light'>Incorporating JavaScript into a web application provides interactivity, real-time manipulation, form validation and efficient communication with the server. These combined benefits improve the user experience and overall application efficiency.</p>
-      </div>
-      <div className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh]' >
-        <h2 className='mb-10'>React / React Native</h2>
-        <p className='text-[15px]  font-light'>React and React Native are technologies that enable the development of interactive and efficient user interfaces for web and mobile applications respectively. With React, you can create scalable and reusable interfaces in web applications, while React Native allows you to develop native mobile apps for iOS and Android with a single code base. Both technologies deliver a high-quality user experience and reduce development time and costs.</p>
-      </div>
-      <div className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh]' >
-        <h2 className='mb-10'>Node.js / Express / Mongo DB</h2>
-        <p className='text-[16px]  font-light'>By incorporating Node.js, MongoDB and Express into the backend of your application, you get a powerful combination. Node.js allows you to build fast and scalable web applications, MongoDB offers a flexible and easy-to-use database, and Express simplifies API and web application development. Together, they bring efficiency, scalability and productivity to backend development.</p>
-      </div>
-      <div className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh]' >
-        <h2 className='mb-10'>Complementary Technologies</h2>
-        <p className='text-[16px]  font-light'>JavaScript libraries provide predefined functionalities that save time and offer advanced features to enhance the development of a project. <br /> <br />
-        Figma allows me to design user interfaces in an efficient and collaborative way, streamlining the design process. <br /><br />
-        And that's not all, I continue to study and learn new languages and technologies to expand my skills.</p>
-      </div>
-    </div>
-    </div>
-    <div className='w-full min-h-[80vh] bg-white flex flex-col'>
-      <h1 className='font-montserrat text-[35px] sm:text-[45px] font-black tracking-[10px] border-l-[8px] border-[#ffe83c] w-[35vh] h-[20vh] ml-2 mt-2 pl-4  text-black ' >My projects</h1>
-       <div className='w-full min-h-[90vh] bg-[url("https://i.postimg.cc/wTjG5436/lineas-de-colores-en-movimiento-5120x2880-xtrafondos-com.jpg")] bg-no-repeat bg-cover bg-fixed  p-4 flex items-center justify-center '>
-            <Card/>
-       </div>
+          </div>
+        </div>
+        <div className='w-full min-h-[100vh] bg-[url("https://i.postimg.cc/0Qvk0cDt/pankaj-patel-y-EAOf-WSdzg-M-unsplash.jpg")] bg-cover bg-fixed flex flex-col justify-evenly items-center'>
+          <h1 className='text-white font-montserrat font-black tracking-[25px] text-[45px]'>SKILLS</h1>
+          <div className='w-full min-h-[80vh] text-white font-montserrat flex-col flex items-start justify-around lg:flex-row '>
+            <div className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col justify-start items-center font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh] ' >
+              <h2 className='mb-20'>HTML5 / CSS3</h2>
+              <p className='text-[16px]  font-light'>HTML5 is the markup language used to structure and present content on the web, CSS is the styling language that defines the look and feel of a web page. HTML5 is responsible for organizing and tagging elements such as text, images and forms, CSS is used to control layout, colors, fonts and other visual aspects. Both work together to create attractive and functional web pages.</p>
+            </div>
+            <div className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col items-center justify-start font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh]' >
+              <h2 className='mb-20'>Javascript</h2>
+              <p className='text-[16px]  font-light'>Incorporating JavaScript into a web application provides interactivity, real-time manipulation, form validation and efficient communication with the server. These combined benefits improve the user experience and overall application efficiency.</p>
+            </div>
+            <div className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh]' >
+              <h2 className='mb-10'>React / React Native</h2>
+              <p className='text-[15px]  font-light'>React and React Native are technologies that enable the development of interactive and efficient user interfaces for web and mobile applications respectively. With React, you can create scalable and reusable interfaces in web applications, while React Native allows you to develop native mobile apps for iOS and Android with a single code base. Both technologies deliver a high-quality user experience and reduce development time and costs.</p>
+            </div>
+            <div className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh]' >
+              <h2 className='mb-10'>Node.js / Express / Mongo DB</h2>
+              <p className='text-[16px]  font-light'>By incorporating Node.js, MongoDB and Express into the backend of your application, you get a powerful combination. Node.js allows you to build fast and scalable web applications, MongoDB offers a flexible and easy-to-use database, and Express simplifies API and web application development. Together, they bring efficiency, scalability and productivity to backend development.</p>
+            </div>
+            <div className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh]' >
+              <h2 className='mb-10'>Complementary Technologies</h2>
+              <p className='text-[16px]  font-light'>JavaScript libraries provide predefined functionalities that save time and offer advanced features to enhance the development of a project. <br /> <br />
+                Figma allows me to design user interfaces in an efficient and collaborative way, streamlining the design process. <br /><br />
+                And that's not all, I continue to study and learn new languages and technologies to expand my skills.</p>
+            </div>
+          </div>
+        </div>
+        <div className='w-full min-h-[80vh] bg-white flex flex-col'>
+          <h1 className='font-montserrat text-[35px] sm:text-[45px] font-black tracking-[10px] border-l-[8px] border-[#ffe83c] w-[35vh] h-[20vh] ml-2 mt-2 pl-4  text-black ' >My projects</h1>
+          <div className='w-full min-h-[90vh] bg-[url("https://i.postimg.cc/wTjG5436/lineas-de-colores-en-movimiento-5120x2880-xtrafondos-com.jpg")] bg-no-repeat bg-cover bg-fixed  p-4 flex items-center justify-center '>
+            <Card />
+          </div>
 
-    </div>
-    <Footer/>
-    </div>
-   
+        </div>
+        <Footer />
+      </div>
+
     </>
   )
 }
