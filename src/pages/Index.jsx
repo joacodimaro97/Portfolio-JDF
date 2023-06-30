@@ -9,6 +9,7 @@ import Footer from '../components/Footer'
 
 export default function Index(){
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [menu, setMenu] = useState(false);
 
   const handleSeeMore = () => {
     const newScrollPosition = window.innerHeight;
@@ -19,12 +20,22 @@ export default function Index(){
     setScrollPosition(newScrollPosition);
   };
 
+  function handleMenu(){
+    setMenu(true);
 
+  }
+  console.log(menu)
 
 
   return (
     <>
-    <div className='w-full min-h-[200vh] flex flex-col'>
+    <div className='absolute z-10  w-[60px] h-[60px] rounded-bl-[100%] bg-[#ffe83c]  top-0 right-0 '>
+    <div onClick={handleMenu} className='w-full h-full flex  justify-center'>
+    <svg  className='mr-0 cursor-pointer' fill="#000000" width="44px" height="44px" viewBox="-5.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>menu</title> <path d="M1.375 9.156h18.063c0.781 0 1.375-0.594 1.375-1.375 0-0.75-0.594-1.344-1.375-1.344h-18.063c-0.781 0-1.375 0.594-1.375 1.344 0 0.781 0.594 1.375 1.375 1.375zM1.375 14.625h18.063c0.781 0 1.375-0.594 1.375-1.375 0-0.75-0.594-1.344-1.375-1.344h-18.063c-0.781 0-1.375 0.594-1.375 1.344 0 0.781 0.594 1.375 1.375 1.375zM1.375 20.094h18.063c0.781 0 1.375-0.594 1.375-1.344 0-0.781-0.594-1.375-1.375-1.375h-18.063c-0.781 0-1.375 0.594-1.375 1.375 0 0.75 0.594 1.344 1.375 1.344zM1.375 25.563h18.063c0.781 0 1.375-0.594 1.375-1.344 0-0.781-0.594-1.375-1.375-1.375h-18.063c-0.781 0-1.375 0.594-1.375 1.375 0 0.75 0.594 1.344 1.375 1.344z"></path> </g></svg>
+    </div>
+    </div>
+    <div className='w-full min-h-[200vh] z-1 flex flex-col'>
+      
     <div className='animate__animated animate__fadeIn bg-[url("https://i.postimg.cc/kMH7GJDM/gabriel-heinzer-EUzk9-BIEq6-M-unsplash.jpg")] pt-20 bg-cover bg-center bg-no-repeat bg-black  bg-fixed w-full h-[100vh] flex flex-col justify-end items-center'>
         
         <div className=' border-l-8 border-[#fff]  pl-6 w-[90vw]  h-[40vh] mb-80 lg:mb-80 flex flex-col justify-evenly'>
@@ -102,7 +113,7 @@ export default function Index(){
     </div>
     </div>
     <div className='w-full min-h-[80vh] bg-white flex flex-col'>
-      <h1 className='font-montserrat text-[45px] font-black tracking-[10px] border-l-[8px] border-[#ffe83c] w-[35vh] h-[20vh] ml-2 mt-2 pl-4 text-black ' >My projects</h1>
+      <h1 className='font-montserrat text-[35px] sm:text-[45px] font-black tracking-[10px] border-l-[8px] border-[#ffe83c] w-[35vh] h-[20vh] ml-2 mt-2 pl-4  text-black ' >My projects</h1>
        <div className='w-full min-h-[90vh] bg-[url("https://i.postimg.cc/wTjG5436/lineas-de-colores-en-movimiento-5120x2880-xtrafondos-com.jpg")] bg-no-repeat bg-cover bg-fixed  p-4 flex items-center justify-center '>
             <Card/>
        </div>
