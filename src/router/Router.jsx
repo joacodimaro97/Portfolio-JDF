@@ -14,8 +14,8 @@ export default function Router(){
         <Routes>
             <Route element={<App/>}>
                 <Route path="/" element={<Index/>}/>
-            </Route>
                 <Route path="/history" element={<History/>}/>
+            </Route>
         </Routes>
     )
 }
