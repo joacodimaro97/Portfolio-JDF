@@ -1,6 +1,11 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 import Card from '../components/Card';
+import Footer from '../components/Footer'
+
+
+
+
 
 export default function Index(){
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -58,8 +63,8 @@ export default function Index(){
      
     </div>
      <div className='w-[90%] md:w-[50%] h-full  items-center justify-evenly flex flex-col '>
-        <h1 className='font-montserrat text-[30px] font-bold tracking-[10px]'>About me</h1>
-            <p className='font-montserrat text-center p-2 md:p-10 text-[17px] tracking-[1px]'>Hi! I'm Joaco, Full Stack Developer.
+        <h1 className='font-montserrat text-[#000] text-[30px] font-bold tracking-[10px]'>About me</h1>
+            <p className='font-montserrat text-center p-2 md:p-10 text-[17px] text-black tracking-[1px]'>Hi! I'm Joaco, Full Stack Developer.
               I have a creative mindset, good skills and experience in technologies such as HTML5, CSS, React, React Native, MongoDB, Express and Node.js.
               I have skills to work in a team using the AGILE methodology and collaboratively on Github, building projects from scratch, demonstrating initiative and ability to acquire knowledge in a self-taught way.
               The use of Javascript libraries, allow me to design and develop attractive and functional interfaces that delight users.
@@ -97,12 +102,13 @@ export default function Index(){
     </div>
     </div>
     <div className='w-full min-h-[80vh] bg-white flex flex-col'>
-      <h1 className='font-montserrat text-[45px] font-black tracking-[10px] border-l-[8px] border-[#ffe83c] w-[35vh] h-[20vh] ml-2 mt-2 pl-4 ' >My projects</h1>
-       <div className='w-full min-h-[90vh]  flex items-center justify-center '>
+      <h1 className='font-montserrat text-[45px] font-black tracking-[10px] border-l-[8px] border-[#ffe83c] w-[35vh] h-[20vh] ml-2 mt-2 pl-4 text-black ' >My projects</h1>
+       <div className='w-full min-h-[90vh] bg-[url("https://i.postimg.cc/wTjG5436/lineas-de-colores-en-movimiento-5120x2880-xtrafondos-com.jpg")] bg-no-repeat bg-cover bg-fixed  p-4 flex items-center justify-center '>
             <Card/>
        </div>
 
     </div>
+    <Footer/>
     </div>
    
     </>

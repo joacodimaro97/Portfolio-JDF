@@ -3,6 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import App from "../App";
 import  Index  from "../pages/Index";
 import 'tailwindcss/tailwind.css';
+
+
+
  
 export default function Router(){
 

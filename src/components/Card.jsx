@@ -9,6 +9,9 @@ export default function Card() {
   const [counter, setCounter] = useState(0);
   const [currentProject, setCurrentProject] = useState(0);
 
+
+
+
   let data = [
     {
       title: "Mindtech",
@@ -57,11 +60,16 @@ export default function Card() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCounter((prevCounter) => (prevCounter + 1) % images.length);
+    
     }, 4000);
     return () => {
       clearInterval(intervalId);
     };
   }, [images]);
+  
+    
+  
+  
 
   const handleProjectChange = (step) => {
     setCurrentProject((prevProject) => {
@@ -75,20 +83,23 @@ export default function Card() {
     });
   };
 
+  
   return (
     <>
      
-      <div className="w-[90%] md:w-[65%]  min-h-[70vh] md:min-h-[70vh] bg-[#e5e5e5] shadow-md shadow-black flex flex-col items-center justify-evenly rounded-[15px]">
+
+      <div className="w-[90%] md:w-[65%]  min-h-[70vh] md:min-h-[70vh] bg-[#000000fe] text-white shadow-sm shadow-white flex flex-col items-center justify-evenly rounded-[15px]">
         <h1 className="font-black tracking-[8px] text-[30px] ">{data[currentProject].title}</h1>
         <p className="text-center text-[12px] p-2 w-[100%] md:w-[80%] font-montserrat">{data[currentProject].description}</p>
-        <img className="animate__animated animate__fadeIn w-[70%] h-[65%] object-contain" src={images[counter]} alt="" />
+        <img className="w-[70%] h-[65%] object-contain" src={images[counter]} alt="" />
         <div className="m-2 flex items-center justify-evenly w-full h-[10vh ]  ">
-        <button className=" bg-black  w-[10vw] m-1 sm:w-[6vw] md:w-[7vw] md:mr-4 flex items-center justify-center h-[5vh] rounded-[50px] " onClick={() => handleProjectChange(-1)}>
-      <svg fill="#ffffff" height="24px" width="24px" version="1.1" id="XMLID_287_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve" transform="rotate(180)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="next"> <g> <polygon points="6.8,23.7 5.4,22.3 15.7,12 5.4,1.7 6.8,0.3 18.5,12 "></polygon> </g> </g> </g></svg>
+        <button className=" bg-white  w-[10vw] m-1 sm:w-[6vw] md:w-[7vw] md:mr-4 flex items-center justify-center h-[5vh] rounded-[50px] " onClick={() => handleProjectChange(-1)}>
+      <svg fill="#000" height="24px" width="24px" version="1.1" id="XMLID_287_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve" transform="rotate(180)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="next"> <g> <polygon points="6.8,23.7 5.4,22.3 15.7,12 5.4,1.7 6.8,0.3 18.5,12 "></polygon> </g> </g> </g></svg>
       </button>
-      <button className="  bg-black m-1 w-[10vw] sm:w-[6vw] md:w-[7vw] md:ml-4 flex items-center justify-center h-[5vh] rounded-[50px] " onClick={() => handleProjectChange(1)}>
-      <svg fill="#ffffff" height="24px" width="24px" version="1.1" id="XMLID_287_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve" transform="rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="next"> <g> <polygon points="6.8,23.7 5.4,22.3 15.7,12 5.4,1.7 6.8,0.3 18.5,12 "></polygon> </g> </g> </g></svg>
+      <button className="  bg-white m-1 w-[10vw] sm:w-[6vw] md:w-[7vw] md:ml-4 flex items-center justify-center h-[5vh] rounded-[50px] " onClick={() => handleProjectChange(1)}>
+      <svg fill="#000" height="24px" width="24px" version="1.1" id="XMLID_287_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve" transform="rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="next"> <g> <polygon points="6.8,23.7 5.4,22.3 15.7,12 5.4,1.7 6.8,0.3 18.5,12 "></polygon> </g> </g> </g></svg>
       </button>
+
         </div>
       </div>
      
