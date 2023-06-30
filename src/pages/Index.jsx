@@ -55,7 +55,7 @@ export default function Index() {
           {menu && <animated.div id='menuDiv' style={menuAnimation} className='absolute w-[100vw] md:w-[40vw] xl:w-[30vw] 2xl:w-[25vw] h-[100vh]   top-0 right-0 bg-white ' >
             <div className='flex flex-col items-end'>
               <svg className='cursor-pointer m-1' onClick={closeMenu} fill="#000000" width="44px" height="44px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM21.657 10.344c-0.39-0.39-1.023-0.39-1.414 0l-4.242 4.242-4.242-4.242c-0.39-0.39-1.024-0.39-1.415 0s-0.39 1.024 0 1.414l4.242 4.242-4.242 4.242c-0.39 0.39-0.39 1.024 0 1.414s1.024 0.39 1.415 0l4.242-4.242 4.242 4.242c0.39 0.39 1.023 0.39 1.414 0s0.39-1.024 0-1.414l-4.242-4.242 4.242-4.242c0.391-0.391 0.391-1.024 0-1.414z"></path> </g></svg>
-              <div className='w-full text-white font-bold tracking-[2px] flex justify-center items-center bg-[#323131db] h-[8vh]'>
+              <div className='w-full text-[#fff] font-bold tracking-[2px] flex justify-center items-center bg-[#323131db] h-[8vh]'>
                 <h1 >ENG</h1>
                 <input
                   type='checkbox'
@@ -67,10 +67,10 @@ export default function Index() {
               </div>
               <div className='w-full flex flex-col items-center justify-evenly bg-[#0c0c0b] h-[85vh] ' >
                 
-                <Link to={"/history"} className='flex flex-col items-center '><p className='mr-2 flex items-center font-bold tracking-[7px] text-[1.4rem] text-white hover:text-[#ffe83c]'>My History <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                <Link to={"/history"} className='flex flex-col items-center '><p className='mr-2 flex items-center font-bold tracking-[7px] text-[1.4rem] text-[#fff] hover:text-[#ffe83c]'>My History <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                 </svg></p>
-                <p className='text-center p-2'>Let's leave programming aside. <br />
+                <p className='text-center p-2 text-[#fff]'>Let's leave programming aside. <br />
                   I invite you to meet me outside of programming, get to know my story and share part of my travels and adventures.</p>
                 
                 </Link>
@@ -79,13 +79,13 @@ export default function Index() {
                 <Link className='flex flex-col items-center '><p className='flex items-center mr-2 font-bold tracking-[7px] text-white text-[1.4rem] hover:text-[#ffe83c]'>Challenge JS <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
                 </svg></p>
-                <p className='text-center p-2'>Follow step by step the evolution of the 50 Javascript projects challenge.</p>
+                <p className='text-center p-2 text-[#fff]'>Follow step by step the evolution of the 50 Javascript projects challenge.</p>
                 </Link>
                 
                 <Link className='flex flex-col items-center '><p className='flex items-center mr-2 font-bold tracking-[7px] text-[1.4rem] text-white hover:text-[#ffe83c]'>Contact <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
                 </svg></p>
-                <p className='text-center p-2'>Did you find my profile interesting? Do not hesitate to contact me.</p>
+                <p className='text-center p-2 text-[#fff]'>Did you find my profile interesting? Do not hesitate to contact me.</p>
 
                 </Link>
                 <Link></Link>
@@ -175,8 +175,8 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className='w-full min-h-[80vh]  flex flex-col bg-black bg-opacity-50  shadow-lg backdrop-filter backdrop-blur-sm border border-black border-opacity-25'>
-          <h1 className='font-montserrat text-[35px] sm:text-[45px] font-black tracking-[10px] border-l-[8px] border-[#ffe83c] w-[35vh] h-[20vh] ml-2 mt-2 pl-4  text-white ' >My projects</h1>
+        <div className='w-full min-h-[80vh]  flex flex-col bg-[#0000008f]    border border-black border-opacity-25'>
+          <h1 className='font-montserrat text-[35px] sm:text-[45px] font-black tracking-[10px] border-l-[8px] border-[#ffe83c] w-[35vh] h-[20vh] ml-2 mt-2 pl-4  text-[#fff] ' >My projects</h1>
           <div className='w-full min-h-[90vh] bg-[url("https://i.postimg.cc/wTjG5436/lineas-de-colores-en-movimiento-5120x2880-xtrafondos-com.jpg")] bg-no-repeat bg-cover bg-fixed  p-4 flex items-center justify-center '>
             <Card />
           </div>
