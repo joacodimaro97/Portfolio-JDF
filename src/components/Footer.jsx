@@ -11,7 +11,7 @@ export default function Footer(){
             <div className="grid grid-flow-col gap-4">
                 
                 <a className="link link-hover">Contact</a>
-                <a className="link link-hover">My story</a>
+                <a className="link link-hover">My history</a>
                 <a className="link link-hover">Challenge</a>
             </div>
             <div>
