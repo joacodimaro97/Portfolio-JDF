@@ -4,6 +4,7 @@ import App from "../App";
 import  Index  from "../pages/Index";
 import History from "../pages/History";
 import 'tailwindcss/tailwind.css';
+import Contact from "../pages/Contact";
 
 
 
@@ -15,6 +16,7 @@ export default function Router(){
             <Route element={<App/>}>
                 <Route path="/" element={<Index/>}/>
                 <Route path="/history" element={<History/>}/>
+                <Route path="/contact" element={<Contact/>}/>
             </Route>
         </Routes>
     )
