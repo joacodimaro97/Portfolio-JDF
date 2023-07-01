@@ -32,8 +32,8 @@ export default function History() {
 
             <div className="w-full h-[70vh] flex  flex-col md:flex-row  ">
                 <div className="w-full md:w-[50%] h-full   flex flex-col items-center">
-                    <h1 className="text-[#d7d6d6] text-center md:text-start font-inter font-semibold tracking-wide md:text-[25px] text-[30px] pl-2 pt-2 xl:text-[45px] md:p-10 "  >"The world is a book Those who do not travel  only read a page"</h1>
-                    <h3 className="text-[#ffffff] text-center md:text-start font-inter font-semibold tracking-wide p-10 text-[25px] md:text-[20px] ">I invite you to get to know my story, who I am  and who are the people that walk with me.  </h3>
+                    <h1 className="text-[#fff] text-center md:text-start font-inter font-semibold tracking-wide md:text-[25px] text-[30px] pl-2 pt-2 xl:text-[45px] md:p-10 "  >"The world is a book Those who do not travel  only read a page"</h1>
+                    <h3 className="text-[#fff] text-center md:text-start font-inter font-semibold tracking-wide p-10 text-[25px] md:text-[20px] ">I invite you to get to know my story, who I am  and who are the people that walk with me.  </h3>
                     <button onClick={handleSeeMore} className="btn btn-outline   font-bold font-inter text-[1.3rem] border-white text-[#3e3e3e] bg-white ">Let's start</button>
 
                     <img className="w-[25vw] mt-[4vh] sm:hidden" src="https://i.postimg.cc/X7RQvn5G/ec5de5ff957a0a861ac59a0036261d5c-removebg-preview.png" alt="" />
@@ -66,27 +66,19 @@ export default function History() {
 
 
         </div>
-        <Carousel transition={{ duration: 2 }} className="rounded-xl w-full h-[60vh]">
-      <img
-        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-        alt="image 1"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        alt="image 2"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-        alt="image 3"
-        className="h-full w-full object-cover"
-      />
-    </Carousel>
+        <div   className="w-full h-[100vh] bg-[#6a7a8d] flex items-center justify-evenly shadow-inner  shadow-[#000000a4] ">
+          <div className="w-[25%] h-[70%]  bg-[#fff] rounded-[10px] shadow-md shadow-[#000000f0] ">
+            <div className="w-full h-[4vh]">
+
+            </div>
+            <img className="  w-full h-[65%] object-contain p-1" src="https://i.postimg.cc/7P9LgLB2/perfil.jpg" alt="" />
+            
+          </div>
+          <div className="w-[25%] h-[70%]  bg-[#fff] rounded-[10px] shadow-md shadow-[#000000f0] "><img className="  w-full h-[65%] object-contain p-1 " src="https://i.postimg.cc/PqQHTpZr/sur1.jpgs" alt="" /></div>
+          <div className="w-[25%] h-[70%]  bg-[#fff] rounded-[10px] shadow-md shadow-[#000000f0] "><img className="  w-full h-[65%] object-contain p-1" src="https://i.postimg.cc/vHYMDj4G/joaviaje.jpg" alt="" /></div>
+        </div>
         </div>
 
     )
 }
 
-//   <img src="" alt="" />
-//            <img src="" alt="" />
