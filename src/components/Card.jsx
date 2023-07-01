@@ -61,7 +61,7 @@ export default function Card() {
     const intervalId = setInterval(() => {
       setCounter((prevCounter) => (prevCounter + 1) % images.length);
     
-    }, 4000);
+    }, 2000);
     return () => {
       clearInterval(intervalId);
     };

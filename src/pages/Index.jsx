@@ -7,6 +7,7 @@ import { useSpring, animated } from '@react-spring/web';
 
 
 
+
 export default function Index() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [menu, setMenu] = useState(false);
@@ -43,12 +44,12 @@ export default function Index() {
     setChecked(!checked);
   };
 
-
+ 
 
 
   return (
     <>
-      <div className='absolute z-10  w-[60px] h-[60px] rounded-bl-[100%] bg-[#ffe83c]  top-0 right-0 '>
+      <div className='absolute z-10  w-[60px] h-[60px] rounded-bl-[100%] bg-[#efd832]  top-0 right-0 '>
         <div className='w-full h-full flex  justify-center'>
           <svg onClick={handleMenu} className='mr-0 cursor-pointer' fill="#000000" width="44px" height="44px" viewBox="-5.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>menu</title> <path d="M1.375 9.156h18.063c0.781 0 1.375-0.594 1.375-1.375 0-0.75-0.594-1.344-1.375-1.344h-18.063c-0.781 0-1.375 0.594-1.375 1.344 0 0.781 0.594 1.375 1.375 1.375zM1.375 14.625h18.063c0.781 0 1.375-0.594 1.375-1.375 0-0.75-0.594-1.344-1.375-1.344h-18.063c-0.781 0-1.375 0.594-1.375 1.344 0 0.781 0.594 1.375 1.375 1.375zM1.375 20.094h18.063c0.781 0 1.375-0.594 1.375-1.344 0-0.781-0.594-1.375-1.375-1.375h-18.063c-0.781 0-1.375 0.594-1.375 1.375 0 0.75 0.594 1.344 1.375 1.344zM1.375 25.563h18.063c0.781 0 1.375-0.594 1.375-1.344 0-0.781-0.594-1.375-1.375-1.375h-18.063c-0.781 0-1.375 0.594-1.375 1.375 0 0.75 0.594 1.344 1.375 1.344z"></path> </g></svg>
 
@@ -58,14 +59,14 @@ export default function Index() {
 
               <div className='w-full text-[#fff] font-bold tracking-[2px] flex justify-center items-center bg-[#323131db] h-[8vh]'>
 
-                <h1 >ENG</h1>
+                <h1 >ESP</h1>
                 <input
                   type='checkbox'
                   className='toggle bg-[#3d8630] mr-2 ml-2'
                   checked={checked}
                   onChange={handleClick}
                 />
-                <h1>ESP</h1>
+                <h1>ENG</h1>
               </div>
               <div className='w-full flex flex-col items-center justify-evenly bg-[#0c0c0b] h-[85vh] ' >
                 
@@ -81,7 +82,7 @@ export default function Index() {
                 </Link>
                 
                 
-                <Link className='flex flex-col items-center '><p className='flex items-center mr-2 font-bold tracking-[7px] text-white text-[1.4rem] hover:text-[#ffe83c]'>Challenge JS <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                <Link to={"/challenge"} className='flex flex-col items-center '><p className='flex items-center mr-2 font-bold tracking-[7px] text-white text-[1.4rem] hover:text-[#ffe83c]'>Challenge JS <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
                 </svg></p>
 
@@ -114,7 +115,7 @@ export default function Index() {
 
           <div className=' border-l-8 border-[#fff]  pl-6 w-[90vw]  h-[40vh] mb-80 lg:mb-80 flex flex-col justify-evenly'>
             <p className='text-[3rem]  md:text-[4.8rem] text-white font-montserrat tracking-wider font-black '>Joaquin Dimaro</p>
-            <p className='text-[1.5rem] text-[#ffe83c]'>Full Stack Developer</p>
+            <p className='text-[1.5rem] text-[#efd832]'>Full Stack Developer</p>
             <div className='flex items-center justify-between w-[12vw]'>
               <Link to={"https://www.instagram.com/joaquindimaro/"} target="_blank" className='hover:scale-[1.3] transition-all duration-600'>
                 <svg width="34px" height="34px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fillRule="evenodd" clipRule="evenodd" d="M2 6C2 3.79086 3.79086 2 6 2H18C20.2091 2 22 3.79086 22 6V18C22 20.2091 20.2091 22 18 22H6C3.79086 22 2 20.2091 2 18V6ZM6 4C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4H6ZM12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9ZM7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12ZM17.5 8C18.3284 8 19 7.32843 19 6.5C19 5.67157 18.3284 5 17.5 5C16.6716 5 16 5.67157 16 6.5C16 7.32843 16.6716 8 17.5 8Z" fill="#ffffff"></path> </g></svg>
@@ -188,7 +189,7 @@ export default function Index() {
         </div>
 
         <div className='w-full min-h-[80vh]  flex flex-col bg-[#0000008f]    border border-black border-opacity-25'>
-          <h1 className='font-montserrat text-[35px] sm:text-[45px] font-black tracking-[10px] border-l-[8px] border-[#ffe83c] w-[35vh] h-[20vh] ml-2 mt-2 pl-4  text-[#fff] ' >My projects</h1>
+          <h1 className='font-montserrat text-[35px] sm:text-[45px] font-black tracking-[10px] border-l-[8px] border-[#efd832] w-[35vh] h-[20vh] ml-2 mt-2 pl-4  text-[#fff] ' >My projects</h1>
 
           <div className='w-full min-h-[90vh] bg-[url("https://i.postimg.cc/wTjG5436/lineas-de-colores-en-movimiento-5120x2880-xtrafondos-com.jpg")] bg-no-repeat bg-cover bg-fixed  p-4 flex items-center justify-center '>
             <Card />

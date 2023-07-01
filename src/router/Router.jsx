@@ -5,6 +5,7 @@ import  Index  from "../pages/Index";
 import History from "../pages/History";
 import 'tailwindcss/tailwind.css';
 import Contact from "../pages/Contact";
+import Challenge from "../pages/Challenge";
 
 
 
@@ -17,6 +18,7 @@ export default function Router(){
                 <Route path="/" element={<Index/>}/>
                 <Route path="/history" element={<History/>}/>
                 <Route path="/contact" element={<Contact/>}/>
+                <Route path="/challenge" element={<Challenge/>}/>
             </Route>
         </Routes>
     )
