@@ -86,7 +86,9 @@ export default function Index() {
                 </svg></p>
 
                 <p className='text-center p-2 text-[#fff]'>Follow step by step the evolution of the 50 Javascript projects challenge.</p>
+
                 </Link>
+
 
                 
                 <Link to={"/contact"} className='flex flex-col items-center '><p className='flex items-center mr-2 font-bold tracking-[7px] text-[1.4rem] text-white hover:text-[#ffe83c]'>Contact <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="w-6 h-6">
