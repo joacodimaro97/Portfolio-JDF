@@ -9,7 +9,6 @@ import 'aos/dist/aos.css'
 
 
 
-
 export default function Index() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [menu, setMenu] = useState(false);
