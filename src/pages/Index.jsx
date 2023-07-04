@@ -45,9 +45,11 @@ export default function Index() {
     setChecked(!checked);
   };
 
+
   useEffect(() => {
     AOS.init({ duration: 1300 });
   }, []);
+
 
 
   return (
