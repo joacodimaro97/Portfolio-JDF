@@ -9,6 +9,7 @@ import 'aos/dist/aos.css'
 
 
 
+
 export default function Index() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [menu, setMenu] = useState(false);
@@ -45,9 +46,11 @@ export default function Index() {
     setChecked(!checked);
   };
 
+
   useEffect(() => {
     AOS.init({ duration: 1300 });
   }, []);
+
 
 
   return (

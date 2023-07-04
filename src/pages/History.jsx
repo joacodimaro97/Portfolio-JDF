@@ -35,6 +35,13 @@ export default function History() {
 
 
 
+            <div className="w-full h-[70vh] flex  flex-col md:flex-row  ">
+                <div className="w-full md:w-[50%] h-full   flex flex-col items-center">
+                    <h1 className="text-[#fff] text-center md:text-start font-inter font-semibold tracking-wide md:text-[25px] text-[30px] pl-2 pt-2 xl:text-[45px] md:p-10 "  >"The world is a book Those who do not travel  only read a page"</h1>
+                    <h3 className="text-[#fff] text-center md:text-start font-inter font-semibold tracking-wide p-10 text-[25px] md:text-[20px] ">I invite you to get to know my story, who I am  and who are the people that walk with me.  </h3>
+                    <button onClick={handleSeeMore} className="btn btn-outline   font-bold font-inter text-[1.3rem] border-white text-[#3e3e3e] bg-white ">Let's start</button>
+
+
                 <div className="w-full h-[70vh] flex  flex-col md:flex-row  ">
                     <div className="w-full md:w-[50%] h-full   flex flex-col items-center">
                         <h1 className="text-[#fff] text-center md:text-start font-inter font-semibold tracking-wide md:text-[25px] text-[30px] pl-2 pt-2 xl:text-[45px] md:p-10 "  >"The world is a book Those who do not travel  only read a page"</h1>
@@ -70,6 +77,7 @@ export default function History() {
                 </div>
 
 
+
             </div>
             <div className="w-full min-h-[100vh] bg-[#ffffff] text-[#000] font-montserrat flex flex-col sm:flex-row  items-center justify-evenly shadow-inner shadow-[#000000a4]">
       <div className="w-[60%]  sm:w-[40%] h-full flex flex-col justify-evenly p-4 " data-aos="fade-right" >
@@ -96,6 +104,8 @@ export default function History() {
         </p>
       </div>
     </div>
+
+
         </div>
 
     )
