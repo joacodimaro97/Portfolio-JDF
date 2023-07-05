@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Form, Link } from 'react-router-dom'
 import Card from '../components/Card';
 import Footer from '../components/Footer'
 import { useSpring, animated } from '@react-spring/web';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-
-
-
+import { IntlProvider, FormattedMessage } from "react-intl";
+import Español from '../lang/es-ARG.json'
+import Ingles from '../lang/en-US.json'
 
 export default function Index() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [menu, setMenu] = useState(false);
   const [checked, setChecked] = useState(true);
+  const [idioma, setIdioma] = useState('Ingles')
+
+
+  function changeIdioma(){
+    setIdioma('Español')
+  }
 
   const handleSeeMore = () => {
     const newScrollPosition = window.innerHeight;
@@ -33,9 +39,9 @@ export default function Index() {
 
   const menuAnimation = useSpring({
 
-    transform: menu ? 'translateY(0)' : 'translateY(-100%)',
+    transform: menu ? 'translateX(0)' : 'translateX(100%)',
     config: {
-      duration: 800,
+      duration: 500,
     },
   });
 
@@ -43,6 +49,7 @@ export default function Index() {
 
   const handleClick = () => {
     setChecked(!checked);
+    setIdioma(checked ? 'Ingles' : 'Español');
   };
 
 
@@ -54,54 +61,51 @@ export default function Index() {
 
   return (
     <>
-      <div className='absolute z-10  w-[60px] h-[60px] rounded-bl-[100%] bg-[#efd832]  top-0 right-0 '>
+    <IntlProvider locale='es-AR' messages={idioma === 'Ingles' ? Ingles : Español} >
+      <div className='absolute z-10   w-[60px] h-[60px] rounded-bl-[100%] bg-[#efd832]  top-0 right-0 '>
         <div className='w-full h-full flex  justify-center'>
-          <svg onClick={handleMenu} className='mr-0 cursor-pointer' fill="#000000" width="44px" height="44px" viewBox="-5.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>menu</title> <path d="M1.375 9.156h18.063c0.781 0 1.375-0.594 1.375-1.375 0-0.75-0.594-1.344-1.375-1.344h-18.063c-0.781 0-1.375 0.594-1.375 1.344 0 0.781 0.594 1.375 1.375 1.375zM1.375 14.625h18.063c0.781 0 1.375-0.594 1.375-1.375 0-0.75-0.594-1.344-1.375-1.344h-18.063c-0.781 0-1.375 0.594-1.375 1.344 0 0.781 0.594 1.375 1.375 1.375zM1.375 20.094h18.063c0.781 0 1.375-0.594 1.375-1.344 0-0.781-0.594-1.375-1.375-1.375h-18.063c-0.781 0-1.375 0.594-1.375 1.375 0 0.75 0.594 1.344 1.375 1.344zM1.375 25.563h18.063c0.781 0 1.375-0.594 1.375-1.344 0-0.781-0.594-1.375-1.375-1.375h-18.063c-0.781 0-1.375 0.594-1.375 1.375 0 0.75 0.594 1.344 1.375 1.344z"></path> </g></svg>
-
-          {menu && <animated.div id='menuDiv' style={menuAnimation} className='absolute w-[100vw] md:w-[40vw] xl:w-[30vw] 2xl:w-[25vw] h-[100vh]   top-0 right-0 bg-white ' >
+          <svg className='ml-2 hover:cursor-pointer' onClick={handleMenu}  width="44px" height="44px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7C5 6.44772 5.44772 6 6 6H18C18.5523 6 19 6.44772 19 7C19 7.55228 18.5523 8 18 8H6C5.44772 8 5 7.55228 5 7ZM5 12C5 11.4477 5.44772 11 6 11H18C18.5523 11 19 11.4477 19 12C19 12.5523 18.5523 13 18 13H6C5.44772 13 5 12.5523 5 12ZM5 17C5 16.4477 5.44772 16 6 16H18C18.5523 16 19 16.4477 19 17C19 17.5523 18.5523 18 18 18H6C5.44772 18 5 17.5523 5 17Z" fill="#000000"></path> </g></svg>
+          {menu && <animated.div id='menuDiv' style={menuAnimation} className=' absolute w-[100vw] md:w-[40vw] xl:w-[30vw] 2xl:w-[25vw] h-[100vh]   top-0 right-0 bg-white ' >
             <div className='flex flex-col items-end'>
               <svg className='cursor-pointer m-1' onClick={closeMenu} fill="#000000" width="44px" height="44px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM21.657 10.344c-0.39-0.39-1.023-0.39-1.414 0l-4.242 4.242-4.242-4.242c-0.39-0.39-1.024-0.39-1.415 0s-0.39 1.024 0 1.414l4.242 4.242-4.242 4.242c-0.39 0.39-0.39 1.024 0 1.414s1.024 0.39 1.415 0l4.242-4.242 4.242 4.242c0.39 0.39 1.023 0.39 1.414 0s0.39-1.024 0-1.414l-4.242-4.242 4.242-4.242c0.391-0.391 0.391-1.024 0-1.414z"></path> </g></svg>
 
               <div className='w-full text-[#fff] font-bold tracking-[2px] flex justify-center items-center bg-[#323131db] h-[8vh]'>
 
-                <h1 >ESP</h1>
-                <input
+                <h1 >ENG</h1>
+                <input 
                   type='checkbox'
                   className='toggle bg-[#3d8630] mr-2 ml-2'
-                  checked={checked}
+                  checked={idioma === 'Español'}
                   onChange={handleClick}
                 />
-                <h1>ENG</h1>
+                <h1>ESP</h1>
               </div>
               <div className='w-full flex flex-col items-center justify-evenly bg-[#0c0c0b] h-[85vh] ' >
                 
 
-                <Link to={"/history"} className='flex flex-col items-center '><p className='mr-2 flex items-center font-bold tracking-[7px] text-[1.4rem] text-[#fff] hover:text-[#ffe83c]'>My History <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                <Link to={"/history"} className='flex flex-col items-center '><p className='mr-2 flex items-center font-bold tracking-[7px] text-[1.4rem] text-[#fff] hover:text-[#ffe83c]'><FormattedMessage id='historyTitle' /> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                 </svg></p>
-                <p className='text-center p-2 text-[#fff]'>Let's leave programming aside. <br />
-
-
-                  I invite you to meet me outside of programming, get to know my story and share part of my travels and adventures.</p>
+                <p className='text-center p-2 text-[#fff]'><FormattedMessage  id='historyText' /></p>
                 
                 </Link>
                 
                 
-                <Link to={"/challenge"} className='flex flex-col items-center '><p className='flex items-center mr-2 font-bold tracking-[7px] text-white text-[1.4rem] hover:text-[#ffe83c]'>Challenge JS <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                <Link to={"/challenge"} className='flex flex-col items-center '><p className='flex items-center mr-2 font-bold tracking-[7px] text-white text-[1.4rem] hover:text-[#ffe83c]'><FormattedMessage  id='challenge' /> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
                 </svg></p>
 
-                <p className='text-center p-2 text-[#fff]'>Follow step by step the evolution of the 50 Javascript projects challenge.</p>
+                <p className='text-center p-2 text-[#fff]'><FormattedMessage id="challengeText" /></p>
 
                 </Link>
 
 
                 
-                <Link to={"/contact"} className='flex flex-col items-center '><p className='flex items-center mr-2 font-bold tracking-[7px] text-[1.4rem] text-white hover:text-[#ffe83c]'>Contact <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="w-6 h-6">
+                <Link to={"/contact"} className='flex flex-col items-center '><p className='flex items-center mr-2 font-bold tracking-[7px] text-[1.4rem] text-white hover:text-[#ffe83c]'><FormattedMessage id='contactTitle' /> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
                 </svg></p>
 
-                <p className='text-center p-2 text-[#fff]'>Did you find my profile interesting? Do not hesitate to contact me.</p>
+                <p className='text-center p-2 text-[#fff]'><FormattedMessage id='contactText' /></p>
 
 
                 </Link>
@@ -114,11 +118,11 @@ export default function Index() {
           </animated.div>}
         </div>
       </div>
-      <div className='w-full min-h-[200vh] z-1 flex flex-col'>
+      <div className='select-none w-full min-h-[200vh] z-1 flex flex-col'>
 
-        <div className='animate__animated animate__fadeIn bg-[url("https://i.postimg.cc/kMH7GJDM/gabriel-heinzer-EUzk9-BIEq6-M-unsplash.jpg")] pt-20 bg-cover bg-center bg-no-repeat bg-black  bg-fixed w-full h-[100vh] flex flex-col justify-end items-center'>
+        <div className=' animate__animated animate__fadeIn bg-[url("https://i.postimg.cc/kMH7GJDM/gabriel-heinzer-EUzk9-BIEq6-M-unsplash.jpg")] pt-20 bg-cover bg-center bg-no-repeat bg-black  bg-fixed w-full h-[100vh] flex flex-col justify-end items-center'>
 
-          <div className=' border-l-8 border-[#fff]  pl-6 w-[90vw]  h-[40vh] mb-80 lg:mb-80 flex flex-col justify-evenly'>
+          <div className='select-none border-l-8 border-[#fff]  pl-6 w-[90vw]  h-[40vh] mb-80 lg:mb-80 flex flex-col justify-evenly'>
             <p className='text-[3rem]  md:text-[4.8rem] text-white font-montserrat tracking-wider font-black '>Joaquin Dimaro</p>
             <p className='text-[1.5rem] text-[#efd832]'>Full Stack Developer</p>
             <div className='flex items-center justify-between w-[12vw]'>
@@ -154,47 +158,54 @@ export default function Index() {
 
           </div>
           <div className='w-[90%] md:w-[50%] h-full  items-center justify-evenly flex flex-col '>
-            <h1 className='font-montserrat text-[#000] text-[30px] font-bold tracking-[10px]'>About me</h1>
-            <p className='font-montserrat text-center p-2 md:p-10 text-[17px] text-black tracking-[1px]'>Hi! I'm Joaco, Full Stack Developer.
-              I have a creative mindset, good skills and experience in technologies such as HTML5, CSS, React, React Native, MongoDB, Express and Node.js.
-              I have skills to work in a team using the AGILE methodology and collaboratively on Github, building projects from scratch, demonstrating initiative and ability to acquire knowledge in a self-taught way.
-              The use of Javascript libraries, allow me to design and develop attractive and functional interfaces that delight users.
-              I am looking for continuous professional growth, I am goal oriented and I am used to working under tight deadlines.
-              I enjoy change, intellectual challenges and learning new technologies, I can also establish good interpersonal relationships and I have the ability to work in high performance teams in a collaborative way.
-              If you want to know more about me, feel free to contact me.
+            <h1 className='font-montserrat text-[#000] text-[30px] font-bold tracking-[10px]'>
+            <FormattedMessage id='title1' defaultMessage="Sobre mi" />
+            </h1>
+            <p className='font-montserrat text-justify  p-2 md:p-10 text-[17px] text-black tracking-[1px]'>
+              <FormattedMessage id='presentation' />
             </p>
           </div>
         </div>
-        <div className='w-full min-h-[100vh] bg-[url("https://i.postimg.cc/0Qvk0cDt/pankaj-patel-y-EAOf-WSdzg-M-unsplash.jpg")] bg-cover bg-fixed flex flex-col justify-evenly items-center'>
+        <div className='w-full min-h-[100vh]  bg-[url("https://i.postimg.cc/0Qvk0cDt/pankaj-patel-y-EAOf-WSdzg-M-unsplash.jpg")] bg-cover bg-fixed flex flex-col justify-evenly items-center'>
           <h1 className='text-white font-montserrat font-black tracking-[25px] text-[45px]'>SKILLS</h1>
           <div className='w-full min-h-[80vh] text-white font-montserrat flex-col flex items-start justify-around lg:flex-row '>
             <div data-aos="fade-up" className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col justify-start items-center font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh] ' >
               <h2 className='mb-20'>HTML5 / CSS3</h2>
-              <p className='text-[16px]  font-light'>HTML5 is the markup language used to structure and present content on the web, CSS is the styling language that defines the look and feel of a web page. HTML5 is responsible for organizing and tagging elements such as text, images and forms, CSS is used to control layout, colors, fonts and other visual aspects. Both work together to create attractive and functional web pages.</p>
+              <p className='text-[16px] text-justify  font-light'>
+                <FormattedMessage id="html" />
+              </p>
             </div>
             <div data-aos="fade-up" className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col items-center justify-start font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh]' >
               <h2 className='mb-20'>Javascript</h2>
-              <p className='text-[16px]  font-light'>Incorporating JavaScript into a web application provides interactivity, real-time manipulation, form validation and efficient communication with the server. These combined benefits improve the user experience and overall application efficiency.</p>
+              <p className='text-[16px] text-justify   font-light'>
+              <FormattedMessage id="js" />
+              </p>
             </div>
             <div data-aos="fade-up" className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh]' >
               <h2 className='mb-10'>React / React Native</h2>
-              <p className='text-[15px]  font-light'>React and React Native are technologies that enable the development of interactive and efficient user interfaces for web and mobile applications respectively. With React, you can create scalable and reusable interfaces in web applications, while React Native allows you to develop native mobile apps for iOS and Android with a single code base. Both technologies deliver a high-quality user experience and reduce development time and costs.</p>
+              <p className='text-[15px] text-justify   font-light'> 
+              <FormattedMessage id="react" />
+              </p>
             </div>
             <div data-aos="fade-up" className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh]' >
               <h2 className='mb-10'>Node.js / Express / Mongo DB</h2>
-              <p className='text-[16px]  font-light'>By incorporating Node.js, MongoDB and Express into the backend of your application, you get a powerful combination. Node.js allows you to build fast and scalable web applications, MongoDB offers a flexible and easy-to-use database, and Express simplifies API and web application development. Together, they bring efficiency, scalability and productivity to backend development.</p>
+              <p className='text-[16px] text-justify   font-light'>
+              <FormattedMessage id="back" />
+              </p>
             </div>
             <div data-aos="fade-up" className='lg:w-[18%] bg-[#000000f9] shadow-md shadow-[#ffffff1a] flex flex-col items-center font-black tracking-[1px] p-5 text-center text-[25px] min-h-[80vh]' >
               <h2 className='mb-10'>Complementary Technologies</h2>
-              <p className='text-[16px]  font-light'>JavaScript libraries provide predefined functionalities that save time and offer advanced features to enhance the development of a project. <br /> <br />
-                Figma allows me to design user interfaces in an efficient and collaborative way, streamlining the design process. <br /><br />
-                And that's not all, I continue to study and learn new languages and technologies to expand my skills.</p>
+              <p className='text-[16px] text-justify   font-light'>
+              <FormattedMessage id="others" />
+              </p>
             </div>
           </div>
         </div>
 
         <div className='w-full min-h-[80vh]  flex flex-col bg-[#0000008f]    border border-black border-opacity-25'>
-          <h1 className='font-montserrat text-[35px] sm:text-[45px] font-black tracking-[10px] border-l-[8px] border-[#efd832] w-[35vh] h-[20vh] ml-2 mt-2 pl-4  text-[#fff] ' >My projects</h1>
+          <h1 className='font-montserrat text-[35px] sm:text-[45px] font-black tracking-[10px] border-l-[8px] border-[#efd832] w-[35vh] h-[20vh] ml-2 mt-2 pl-4  text-[#fff] ' >
+          <FormattedMessage id="title2" />
+          </h1>
 
           <div className='w-full min-h-[90vh] bg-[url("https://i.postimg.cc/wTjG5436/lineas-de-colores-en-movimiento-5120x2880-xtrafondos-com.jpg")] bg-no-repeat bg-cover bg-fixed  p-4 flex items-center justify-center '>
             <Card />
@@ -203,7 +214,7 @@ export default function Index() {
         </div>
         <Footer />
       </div>
-
+      </IntlProvider>
     </>
   )
 }

@@ -1,0 +1,17 @@
+{   
+    "historyTitle" : "My History",
+    "historyText" : "Let's leave programming aside.  I invite you to meet me outside of programming, get to know my story and share part of my travels and adventures.",
+    "challenge" : "Challenge JS",
+    "challengeText" : "Follow step by step the evolution of the 50 Javascript projects challenge.",
+     "contactTitle" : "Contact",
+     "contactText" : "Did you find my profile interesting? Do not hesitate to contact me.",
+
+    "title1" : "About me",
+    "presentation" : "Hi! I'm Joaco, Full Stack Developer. I have a creative mindset, good skills and experience in technologies such as HTML5, CSS, React, React Native, MongoDB, Express and Node.js. I have skills to work in a team using the AGILE methodology and collaboratively on Github, building projects from scratch, demonstrating initiative and ability to acquire knowledge in a self-taught way. The use of Javascript libraries, allow me to design and develop attractive and functional interfaces that delight users. I am looking for continuous professional growth, I am goal oriented and I am used to working under tight deadlines. I enjoy change, intellectual challenges and learning new technologies, I can also establish good interpersonal relationships and I have the ability to work in high performance teams in a collaborative way. If you want to know more about me, feel free to contact me.",
+    "html" : "HTML5 is the markup language used to structure and present content on the web, CSS is the styling language that defines the look and feel of a web page. HTML5 is responsible for organizing and tagging elements such as text, images and forms, CSS is used to control layout, colors, fonts and other visual aspects. Both work together to create attractive and functional web pages.",
+    "js": "Incorporating JavaScript into a web application provides interactivity, real-time manipulation, form validation and efficient communication with the server. These combined benefits improve the user experience and overall application efficiency.",
+    "react": "React and React Native are technologies that enable the development of interactive and efficient user interfaces for web and mobile applications respectively. With React, you can create scalable and reusable interfaces in web applications, while React Native allows you to develop native mobile apps for iOS and Android with a single code base. Both technologies deliver a high-quality user experience and reduce development time and costs.",
+    "back": "By incorporating Node.js, MongoDB and Express into the backend of your application, you get a powerful combination. Node.js allows you to build fast and scalable web applications, MongoDB offers a flexible and easy-to-use database, and Express simplifies API and web application development. Together, they bring efficiency, scalability and productivity to backend development.",
+    "others" : "JavaScript libraries provide predefined functionalities that save time and offer advanced features to enhance the development of a project. Figma allows me to design user interfaces in an efficient and collaborative way, streamlining the design process. And that's not all, I continue to study and learn new languages and technologies to expand my skills.",
+    "title2" : "My projects" 
+}
