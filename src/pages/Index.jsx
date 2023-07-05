@@ -9,7 +9,6 @@ import { IntlProvider, FormattedMessage } from "react-intl";
 import Español from '../lang/es-ARG.json'
 import Ingles from '../lang/en-US.json'
 
-
 export default function Index() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [menu, setMenu] = useState(false);
