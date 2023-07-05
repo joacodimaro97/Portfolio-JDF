@@ -18,7 +18,7 @@ function goToHome(){
             <h1 className="text-[#fff]  text-[20px] font-montserrat font-bold tracking-[4px] "  >We apologize for the inconvenience, we are working for you.</h1> 
             <h3 className="text-[#fff] tracking-[5px] " >(On this page we are Simpsons team.)</h3>
             <img className=" w-[80vw] md:w-[40vw]" src="https://i.postimg.cc/yYPGBfhw/image.png" alt="" />
-            <span className="loading loading-spinner loading-lg"></span>
+            
         </div>
         </>
     )
