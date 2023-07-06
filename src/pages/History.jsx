@@ -3,7 +3,7 @@ import { Navigate, useNavigate, Link } from "react-router-dom";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { IntlProvider } from "react-intl";
-import Blur from 'react-blur'
+import Footer from '../components/Footer'
 
 
 export default function History() {
@@ -147,27 +147,27 @@ export default function History() {
                  <div className="w-full p-4   min-h-[100vh] bg-[#fff] text-[#000] font-montserrat flex flex-col  items-center justify-around ">
                     <p className="font-bold tracking-[2px] text-center  text-[16px] sm:text-[20px] py-20 border-t border-black " >Misiones was a trip that stayed in my memory. The contrast that is generated with the green of the jungle and the red color of the earth form an unforgettable image 🍃</p>
                         
-                        <div data-aos="fade-up" className="  sm:w-[70%] bg-[#ffffd4] flex flex-col sm:flex-row justify-around items-center rounded-[10px] shadow-md shadow-[#00000093] m-2 h-[40%]  ">
+                        <div data-aos="fade-up" className="  sm:w-[70%] bg-[#d8eed3] flex flex-col sm:flex-row justify-around items-center rounded-[10px] shadow-md shadow-[#00000093] m-2 h-[40%]  ">
                         <img className="sm:w-[38%] p-4 sm:p-0 m-2 h-full rounded-[10px] " src="https://i.postimg.cc/s2HYQXtq/joami.jpg" alt="" />
                         <p className="sm:w-[50%] p-2 sm:pl-2  sm:border-l border-[#000] pl-4 font-black text-center sm:text-left text-[#000]">Photo taken on the road leading to "El molino", a waterfall characteristic of the city of San Pedro, Misiones ⛖ </p>
                         </div>
 
-                        <div data-aos="fade-up" className="  sm:w-[70%] bg-[#ffffd4] flex flex-col sm:flex-row-reverse justify-around items-center rounded-[10px] shadow-md shadow-[#00000093] m-2 h-[40%]  ">
+                        <div data-aos="fade-up" className="  sm:w-[70%] bg-[#d8eed3] flex flex-col sm:flex-row-reverse justify-around items-center rounded-[10px] shadow-md shadow-[#00000093] m-2 h-[40%]  ">
                         <img className="sm:w-[38%] p-4 sm:p-0 m-2 h-full rounded-[10px] " src="https://i.postimg.cc/6qnnmhyx/misiones3.jpg" alt="" />
                         <p className="sm:w-[50%] p-2 sm:pr-2  sm:border-r border-[#000] pr-4 font-black text-center sm:text-right text-[#000]">The sun entering into the density of the jungle, the green of the vegetation and the tranquility of a new day, are memories that come to my mind when I see the photo 🌿</p>
                         </div>
 
-                        <div data-aos="fade-up" className="  sm:w-[70%] bg-[#ffffd4] flex flex-col sm:flex-row justify-around items-center rounded-[10px] shadow-md shadow-[#00000093] m-2 h-[40%]  ">
+                        <div data-aos="fade-up" className="  sm:w-[70%] bg-[#d8eed3] flex flex-col sm:flex-row justify-around items-center rounded-[10px] shadow-md shadow-[#00000093] m-2 h-[40%]  ">
                         <img className="sm:w-[38%] p-4 sm:p-0 m-2 h-full rounded-[10px] " src="https://i.postimg.cc/wTYhsnGq/misiones2.jpg" alt="" />
                         <p className="sm:w-[50%] p-2 sm:pl-2  sm:border-l border-[#000] pr-4 font-black text-center sm:text-left text-[#000]">The red of the earth is one of the things that caught my attention, it is something incredible, you feel a unique energy in that land, sensations that do not happen every day 📍 </p>
                         </div>
 
-                        <div data-aos="fade-up" className="  sm:w-[70%] bg-[#ffffd4] flex flex-col sm:flex-row-reverse justify-around items-center rounded-[10px] shadow-md shadow-[#00000093] m-2 h-[40%]  ">
+                        <div data-aos="fade-up" className="  sm:w-[70%] bg-[#d8eed3] flex flex-col sm:flex-row-reverse justify-around items-center rounded-[10px] shadow-md shadow-[#00000093] m-2 h-[40%]  ">
                         <img className="sm:w-[38%] p-4 sm:p-0 m-2 h-full rounded-[10px] " src="https://i.postimg.cc/mD07jnZS/misiones4.jpg" alt="" />
                         <p className="sm:w-[50%] p-2 sm:pr-2  sm:border-r border-[#000] pr-4 font-black text-center sm:text-right text-[#000]">This photo is a clear example of how everything has life in the jungle, every part, every tiny space, even a simple branch of a tree, is full of life in the immensity of the jungle of Misiones 💚 </p>
                         </div>
 
-                        <div data-aos="fade-up" className="  sm:w-[70%] bg-[#ffffd4] flex flex-col sm:flex-row justify-around items-center rounded-[10px] shadow-md shadow-[#00000093] m-2 h-[40%]  ">
+                        <div data-aos="fade-up" className="  sm:w-[70%] bg-[#d8eed3] flex flex-col sm:flex-row justify-around items-center rounded-[10px] shadow-md shadow-[#00000093] m-2 h-[40%]  ">
                         <img className="sm:w-[38%] p-4 sm:p-0 m-2 h-full rounded-[10px] " src="https://i.postimg.cc/50HwwJJ0/misiones5.jpg" alt="" />
                         <p className="sm:w-[50%] p-2 sm:pr-2  sm:border-l border-[#000] pl-4 font-black text-center sm:text-left text-[#000]">The sad side of the story, the color of the water when it rains is an indication of the deforestation that suffers the missionary jungle, the soils are washed and dye of red to the rivers, to conserve it is the duty of all 🌎</p>
                         </div>
@@ -175,6 +175,41 @@ export default function History() {
 
 
                 </div>
+
+                <div className="w-full    min-h-[100vh] bg-[#fff] text-[#000] font-montserrat flex flex-col  sm:flex-row   ">
+                    <div className=" h-[45vh] sm:h-[100vh]   sm:w-[30%]   flex flex-col justify-evenly items-center" >
+                        <h1 className="w-[90%] text-center  sm:text-[14px] sm:text-center md:text-[18px] font-bold p-4 ">These are some of the many photos that I captured in the course of my life, if you liked this section, you can stop by EcologicalTravelNature🍃 and be part of this journey through Argentina </h1>
+                       
+                       <Link to={"https://www.instagram.com/ecologicaltravelnature/"} target="_blank" className="flex   ">
+                        <button className="btn ">
+                            Follow Me!
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                        </button>
+                       </Link>
+                       
+                    </div>
+                    <div className="min-h-[100vh] flex flex-col  p-4 sm:w-[70%] " >
+                        <div className="w-full h-[25%] flex flex-col sm:flex-row  items-center sm:justify-end  " >
+                            <img className=" rounded-[10px] bg-[#dedede] shadow-md shadow-[#000] object-contain w-[60%] sm:w-[14vw] h-[23vh] m-1 " src="https://i.postimg.cc/6qb3191k/flor.jpg" alt="" />
+                        </div>
+                        <div className="w-full sm:h-[25%] flex flex-col sm:flex-row items-center sm:justify-end  " >
+                            <img className=" rounded-[10px] bg-[#dedede] shadow-md shadow-[#000] object-contain w-[60%] sm:w-[14vw] h-[23vh] m-1 " src="https://i.postimg.cc/h42fGrP2/flor2.jpg" alt="" />
+                            <img className=" rounded-[10px] bg-[#dedede] shadow-md shadow-[#000] object-contain w-[60%] sm:w-[14vw] h-[23vh] m-1 " src="https://i.postimg.cc/hPwvLtmx/flor3.jpg" alt="" />
+                        </div>
+                        <div className="w-full sm:h-[25%] flex flex-col sm:flex-row items-center sm:justify-end  " >
+                                <img className=" rounded-[10px] bg-[#dedede] shadow-md shadow-[#000] object-contain w-[60%] sm:w-[14vw] h-[23vh] m-1 " src="https://i.postimg.cc/jjYj13ZS/flor4.jpg" alt="" />
+                                <img className=" rounded-[10px] bg-[#dedede] shadow-md shadow-[#000] object-contain w-[60%] sm:w-[14vw] h-[23vh] m-1 " src="https://i.postimg.cc/1544Vq8s/flor5.jpg" alt="" />
+                                <img className=" rounded-[10px] bg-[#dedede] shadow-md shadow-[#000] object-contain w-[60%] sm:w-[14vw] h-[23vh] m-1 " src="https://i.postimg.cc/0ywQc1G4/flor7.jpg" alt="" />
+                        </div>
+                        <div className="w-full sm:h-[25%] flex flex-col sm:flex-row items-center sm:justify-end " >
+                                <img className=" rounded-[10px] bg-[#dedede] shadow-md shadow-[#000] object-contain w-[60%] sm:w-[14vw] h-[23vh] m-1 " src="https://i.postimg.cc/SsDNJSqn/luna2.jpg" alt="" />
+                                <img className=" rounded-[10px] bg-[#dedede] shadow-md shadow-[#000] object-contain w-[60%] sm:w-[14vw] h-[23vh] m-1 " src="https://i.postimg.cc/WzzpZBbX/luna3.jpg" alt="" />
+                                <img className=" rounded-[10px] bg-[#dedede] shadow-md shadow-[#000] object-contain w-[60%] sm:w-[14vw] h-[23vh] m-1 " src="https://i.postimg.cc/NFnskdKY/luna4.jpg" alt="" />
+                                <img className=" rounded-[10px] bg-[#dedede] shadow-md shadow-[#000] object-contain w-[60%] sm:w-[14vw] h-[23vh] m-1 " src="https://i.postimg.cc/15PhLhZT/luna1.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                    <Footer/>
             </div>
 
         </IntlProvider>
