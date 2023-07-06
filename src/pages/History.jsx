@@ -6,6 +6,7 @@ import { IntlProvider } from "react-intl";
 import Footer from '../components/Footer'
 
 
+
 export default function History() {
     const navigate = useNavigate()
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -147,27 +148,36 @@ export default function History() {
                  <div className="w-full p-4   min-h-[100vh] bg-[#fff] text-[#000] font-montserrat flex flex-col  items-center justify-around ">
                     <p className="font-bold tracking-[2px] text-center  text-[16px] sm:text-[20px] py-20 border-t border-black " >Misiones was a trip that stayed in my memory. The contrast that is generated with the green of the jungle and the red color of the earth form an unforgettable image 🍃</p>
                         
+
                         <div data-aos="fade-up" className="  sm:w-[70%] bg-[#d8eed3] flex flex-col sm:flex-row justify-around items-center rounded-[10px] shadow-md shadow-[#00000093] m-2 h-[40%]  ">
+
                         <img className="sm:w-[38%] p-4 sm:p-0 m-2 h-full rounded-[10px] " src="https://i.postimg.cc/s2HYQXtq/joami.jpg" alt="" />
                         <p className="sm:w-[50%] p-2 sm:pl-2  sm:border-l border-[#000] pl-4 font-black text-center sm:text-left text-[#000]">Photo taken on the road leading to "El molino", a waterfall characteristic of the city of San Pedro, Misiones ⛖ </p>
                         </div>
 
+
                         <div data-aos="fade-up" className="  sm:w-[70%] bg-[#d8eed3] flex flex-col sm:flex-row-reverse justify-around items-center rounded-[10px] shadow-md shadow-[#00000093] m-2 h-[40%]  ">
+
                         <img className="sm:w-[38%] p-4 sm:p-0 m-2 h-full rounded-[10px] " src="https://i.postimg.cc/6qnnmhyx/misiones3.jpg" alt="" />
                         <p className="sm:w-[50%] p-2 sm:pr-2  sm:border-r border-[#000] pr-4 font-black text-center sm:text-right text-[#000]">The sun entering into the density of the jungle, the green of the vegetation and the tranquility of a new day, are memories that come to my mind when I see the photo 🌿</p>
                         </div>
 
                         <div data-aos="fade-up" className="  sm:w-[70%] bg-[#d8eed3] flex flex-col sm:flex-row justify-around items-center rounded-[10px] shadow-md shadow-[#00000093] m-2 h-[40%]  ">
+
                         <img className="sm:w-[38%] p-4 sm:p-0 m-2 h-full rounded-[10px] " src="https://i.postimg.cc/wTYhsnGq/misiones2.jpg" alt="" />
                         <p className="sm:w-[50%] p-2 sm:pl-2  sm:border-l border-[#000] pr-4 font-black text-center sm:text-left text-[#000]">The red of the earth is one of the things that caught my attention, it is something incredible, you feel a unique energy in that land, sensations that do not happen every day 📍 </p>
                         </div>
 
+
                         <div data-aos="fade-up" className="  sm:w-[70%] bg-[#d8eed3] flex flex-col sm:flex-row-reverse justify-around items-center rounded-[10px] shadow-md shadow-[#00000093] m-2 h-[40%]  ">
+
                         <img className="sm:w-[38%] p-4 sm:p-0 m-2 h-full rounded-[10px] " src="https://i.postimg.cc/mD07jnZS/misiones4.jpg" alt="" />
                         <p className="sm:w-[50%] p-2 sm:pr-2  sm:border-r border-[#000] pr-4 font-black text-center sm:text-right text-[#000]">This photo is a clear example of how everything has life in the jungle, every part, every tiny space, even a simple branch of a tree, is full of life in the immensity of the jungle of Misiones 💚 </p>
                         </div>
 
+
                         <div data-aos="fade-up" className="  sm:w-[70%] bg-[#d8eed3] flex flex-col sm:flex-row justify-around items-center rounded-[10px] shadow-md shadow-[#00000093] m-2 h-[40%]  ">
+
                         <img className="sm:w-[38%] p-4 sm:p-0 m-2 h-full rounded-[10px] " src="https://i.postimg.cc/50HwwJJ0/misiones5.jpg" alt="" />
                         <p className="sm:w-[50%] p-2 sm:pr-2  sm:border-l border-[#000] pl-4 font-black text-center sm:text-left text-[#000]">The sad side of the story, the color of the water when it rains is an indication of the deforestation that suffers the missionary jungle, the soils are washed and dye of red to the rivers, to conserve it is the duty of all 🌎</p>
                         </div>
@@ -175,6 +185,7 @@ export default function History() {
 
 
                 </div>
+
 
                 <div className="w-full    min-h-[100vh] bg-[#fff] text-[#000] font-montserrat flex flex-col  sm:flex-row   ">
                     <div className=" h-[45vh] sm:h-[100vh]   sm:w-[30%]   flex flex-col justify-evenly items-center" >
@@ -210,6 +221,7 @@ export default function History() {
                     </div>
                 </div>
                     <Footer/>
+
             </div>
 
         </IntlProvider>
